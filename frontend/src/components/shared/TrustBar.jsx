@@ -11,7 +11,7 @@ const iconMap = {
 export const TrustBar = () => {
   return (
     <div 
-      className="bg-brand-charcoal/50 border-y border-white/5 py-8 lg:py-10"
+      className="bg-muted/30 border-y border-border py-8 lg:py-10"
       data-testid="trust-bar"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
@@ -28,10 +28,10 @@ export const TrustBar = () => {
                   <Icon className="w-5 h-5 text-brand-maroon" />
                 </div>
                 <div>
-                  <span className="font-heading text-base font-semibold text-brand-cream block">
+                  <span className="font-heading text-base font-semibold text-foreground block">
                     {item.text}
                   </span>
-                  <span className="text-xs text-brand-cream/50 mt-0.5 block">
+                  <span className="text-xs text-muted-foreground mt-0.5 block">
                     {item.description}
                   </span>
                 </div>

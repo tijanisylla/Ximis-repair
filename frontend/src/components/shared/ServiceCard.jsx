@@ -8,7 +8,7 @@ export const ServiceCard = ({ service, variant = 'default' }) => {
   
   return (
     <div 
-      className={`group relative bg-brand-charcoal/50 border border-white/5 transition-all duration-500 card-hover ${
+      className={`group relative bg-card border border-border transition-all duration-500 card-hover ${
         variant === 'compact' ? 'p-5' : 'p-6 lg:p-8'
       }`}
       data-testid={`service-card-${service.id}`}
@@ -24,10 +24,10 @@ export const ServiceCard = ({ service, variant = 'default' }) => {
       </div>
 
       {/* Content */}
-      <h3 className="font-heading text-xl font-semibold tracking-wide text-brand-cream mb-3">
+      <h3 className="font-heading text-xl font-semibold tracking-wide text-foreground mb-3">
         {service.name}
       </h3>
-      <p className="text-brand-cream/60 text-sm leading-relaxed mb-6">
+      <p className="text-muted-foreground text-sm leading-relaxed mb-6">
         {service.description}
       </p>
 
@@ -36,7 +36,7 @@ export const ServiceCard = ({ service, variant = 'default' }) => {
         <a href={BUSINESS.phoneLink}>
           <Button 
             variant="outline" 
-            className="w-full border-white/10 text-brand-cream/80 hover:bg-brand-maroon hover:text-white hover:border-brand-maroon font-medium text-xs tracking-wide transition-all duration-300"
+            className="w-full border-border text-muted-foreground hover:bg-brand-maroon hover:text-white hover:border-brand-maroon font-medium text-xs tracking-wide transition-all duration-300"
             data-testid={`service-cta-${service.id}`}
           >
             <Phone className="w-3 h-3 mr-2" />
