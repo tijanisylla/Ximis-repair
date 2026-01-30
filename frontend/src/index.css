@@ -6,11 +6,6 @@
 
 :root {
     --radius: 0px;
-    --brand-maroon: #800020;
-    --brand-maroon-light: #9A1B3D;
-    --brand-maroon-dark: #5C0018;
-    --brand-gold: #C9A962;
-    --brand-cream: #F5F0E8;
 }
 
 body {
@@ -18,16 +13,48 @@ body {
     font-family: 'Manrope', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #0A0A0A;
-    color: #F5F0E8;
 }
 
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+/* Dark theme (default) */
 @layer base {
     :root {
+        /* Light mode colors */
+        --background: 40 20% 98%;
+        --foreground: 0 0% 10%;
+        --card: 0 0% 100%;
+        --card-foreground: 0 0% 10%;
+        --popover: 0 0% 100%;
+        --popover-foreground: 0 0% 10%;
+        --primary: 345 100% 25%;
+        --primary-foreground: 0 0% 100%;
+        --secondary: 40 10% 94%;
+        --secondary-foreground: 0 0% 15%;
+        --muted: 40 10% 94%;
+        --muted-foreground: 0 0% 45%;
+        --accent: 41 49% 50%;
+        --accent-foreground: 0 0% 100%;
+        --destructive: 0 84% 50%;
+        --destructive-foreground: 0 0% 100%;
+        --border: 40 10% 88%;
+        --input: 40 10% 88%;
+        --ring: 345 100% 25%;
+
+        /* Brand colors for light mode */
+        --brand-maroon: 345 100% 25%;
+        --brand-gold: 41 49% 59%;
+        --brand-bg: 40 20% 98%;
+        --brand-text: 0 0% 10%;
+        --brand-text-muted: 0 0% 40%;
+        --brand-card: 0 0% 100%;
+        --brand-border: 40 10% 88%;
+    }
+
+    .dark {
+        /* Dark mode colors */
         --background: 0 0% 4%;
         --foreground: 36 33% 94%;
         --card: 0 0% 7%;
@@ -47,11 +74,15 @@ code {
         --border: 0 0% 18%;
         --input: 0 0% 18%;
         --ring: 345 100% 25%;
-        --chart-1: 345 100% 25%;
-        --chart-2: 41 49% 59%;
-        --chart-3: 173 58% 39%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
+
+        /* Brand colors for dark mode */
+        --brand-maroon: 345 100% 25%;
+        --brand-gold: 41 49% 59%;
+        --brand-bg: 0 0% 4%;
+        --brand-text: 36 33% 94%;
+        --brand-text-muted: 36 10% 60%;
+        --brand-card: 0 0% 10%;
+        --brand-border: 0 0% 18%;
     }
 }
 
@@ -72,28 +103,37 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - dark */
+.dark::-webkit-scrollbar {
+    width: 6px;
+}
+.dark::-webkit-scrollbar-track {
+    background: #0A0A0A;
+}
+.dark::-webkit-scrollbar-thumb {
+    background: #800020;
+}
+.dark::-webkit-scrollbar-thumb:hover {
+    background: #9A1B3D;
+}
+
+/* Custom scrollbar - light */
 ::-webkit-scrollbar {
     width: 6px;
 }
-
 ::-webkit-scrollbar-track {
-    background: #0A0A0A;
+    background: #F5F0E8;
 }
-
 ::-webkit-scrollbar-thumb {
     background: #800020;
-    border-radius: 0;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: #9A1B3D;
 }
 
 /* Selection color */
 ::selection {
-    background-color: rgba(128, 0, 32, 0.4);
-    color: #F5F0E8;
+    background-color: rgba(128, 0, 32, 0.3);
 }
 
 /* Animation utilities */
@@ -138,11 +178,6 @@ html {
     50% { opacity: 0.7; }
 }
 
-@keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
-}
-
 .animate-float {
     animation: float 4s ease-in-out infinite;
 }
@@ -151,20 +186,32 @@ html {
     animation: pulse-subtle 2s ease-in-out infinite;
 }
 
-/* Premium glassmorphism */
-.glass {
+/* Glassmorphism */
+.dark .glass {
     backdrop-filter: blur(20px);
     background: rgba(10, 10, 10, 0.85);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.glass-card {
+.glass {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dark .glass-card {
     backdrop-filter: blur(12px);
     background: rgba(20, 20, 20, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Maroon glow effect */
+.glass-card {
+    backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Glow effects */
 .maroon-glow {
     box-shadow: 0 0 40px -10px rgba(128, 0, 32, 0.5);
 }
@@ -176,13 +223,6 @@ html {
 /* Gradient text */
 .gradient-text {
     background: linear-gradient(135deg, #800020 0%, #C9A962 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.gradient-text-gold {
-    background: linear-gradient(135deg, #C9A962 0%, #E8D5A3 50%, #C9A962 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -249,35 +289,19 @@ html {
     animation-play-state: paused;
 }
 
-/* Image overlay */
-.image-overlay {
-    position: relative;
-}
-
-.image-overlay::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(180deg, transparent 0%, rgba(10, 10, 10, 0.9) 100%);
-}
-
-/* Noise texture overlay */
-.noise-overlay {
-    position: relative;
-}
-
-.noise-overlay::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.03;
-    pointer-events: none;
-    z-index: 1;
-}
-
 @layer base {
     [data-debug-wrapper="true"] {
         display: contents !important;
     }
+}
+
+/* Calendar styling for dark mode */
+.dark .rdp {
+    --rdp-accent-color: #800020;
+    --rdp-background-color: #1a1a1a;
+}
+
+/* Calendar styling for light mode */
+.rdp {
+    --rdp-accent-color: #800020;
 }
