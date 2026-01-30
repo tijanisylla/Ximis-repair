@@ -19,31 +19,31 @@ export const BUSINESS = {
 
 // Trust Indicators
 export const TRUST_INDICATORS = [
-  { icon: "Award", text: "ASE-Certified" },
-  { icon: "Clock", text: "Same-Day Service" },
-  { icon: "DollarSign", text: "Honest Pricing" },
-  { icon: "MapPin", text: "Local Chicago" }
+  { icon: "Award", text: "ASE Certified", description: "Factory trained technicians" },
+  { icon: "Clock", text: "24/7 Service", description: "Always here when you need us" },
+  { icon: "Shield", text: "Honest Pricing", description: "No hidden fees, ever" },
+  { icon: "MapPin", text: "Local Chicago", description: "Serving the community since day one" }
 ];
 
 // Auto Repair Services
 export const AUTO_REPAIR_SERVICES = [
-  { id: 1, name: "Diagnostics", description: "Advanced computer diagnostics to identify issues quickly", icon: "Search" },
-  { id: 2, name: "Brakes", description: "Complete brake system repair and replacement", icon: "Disc" },
-  { id: 3, name: "Oil Change", description: "Quick and thorough oil change service", icon: "Droplet" },
-  { id: 4, name: "Engine", description: "Engine repair, rebuild, and maintenance", icon: "Cog" },
-  { id: 5, name: "Transmission", description: "Transmission repair and fluid service", icon: "Settings" },
-  { id: 6, name: "Suspension", description: "Shocks, struts, and suspension work", icon: "ArrowDownUp" },
-  { id: 7, name: "Batteries", description: "Battery testing, charging, and replacement", icon: "Battery" },
-  { id: 8, name: "Tires", description: "Tire rotation, balancing, and replacement", icon: "Circle" },
-  { id: 9, name: "AC/Heat", description: "Climate control system repair and recharge", icon: "Thermometer" }
+  { id: 1, name: "Diagnostics", description: "State-of-the-art computer diagnostics to pinpoint issues with precision", icon: "Search", featured: true },
+  { id: 2, name: "Brake Service", description: "Complete brake system inspection, repair, and replacement", icon: "Disc", featured: true },
+  { id: 3, name: "Oil Change", description: "Premium synthetic and conventional oil change service", icon: "Droplet", featured: true },
+  { id: 4, name: "Engine Repair", description: "Expert engine diagnostics, repair, and complete rebuilds", icon: "Cog", featured: false },
+  { id: 5, name: "Transmission", description: "Transmission repair, rebuild, and fluid service", icon: "Settings", featured: false },
+  { id: 6, name: "Suspension", description: "Shocks, struts, and complete suspension restoration", icon: "ArrowDownUp", featured: false },
+  { id: 7, name: "Battery Service", description: "Testing, charging, and battery replacement", icon: "Battery", featured: false },
+  { id: 8, name: "Tire Service", description: "Rotation, balancing, alignment, and new tires", icon: "Circle", featured: false },
+  { id: 9, name: "AC & Heating", description: "Climate control system repair and recharge", icon: "Thermometer", featured: false }
 ];
 
 // Car Wash Services
 export const CAR_WASH_SERVICES = [
-  { id: 1, name: "Exterior Wash", description: "Thorough exterior cleaning and rinse", icon: "Sparkles" },
-  { id: 2, name: "Interior Cleaning", description: "Deep interior vacuum and wipe down", icon: "Car" },
-  { id: 3, name: "Full Detailing", description: "Complete interior and exterior detailing", icon: "Star" },
-  { id: 4, name: "Wax & Polish", description: "Professional wax and polish for lasting shine", icon: "Sun" }
+  { id: 1, name: "Exterior Wash", description: "Hand wash with premium products for a spotless finish", icon: "Sparkles" },
+  { id: 2, name: "Interior Clean", description: "Deep vacuum and wipe down of all surfaces", icon: "Car" },
+  { id: 3, name: "Full Detailing", description: "Complete interior and exterior restoration", icon: "Star" },
+  { id: 4, name: "Wax & Polish", description: "Professional wax application for lasting protection", icon: "Sun" }
 ];
 
 // Mock Reviews
@@ -52,43 +52,49 @@ export const REVIEWS = [
     id: 1,
     name: "Michael R.",
     rating: 5,
-    text: "Best auto shop in Chicago. Fixed my transmission issue same day. Honest pricing and great service.",
-    date: "2 weeks ago"
+    text: "Best auto shop in Chicago. They fixed my transmission issue same day when other shops said it would take a week. Truly professional.",
+    date: "2 weeks ago",
+    service: "Transmission Repair"
   },
   {
     id: 2,
     name: "Sarah T.",
     rating: 5,
-    text: "They saved me hundreds compared to the dealer. My car runs better than ever. Highly recommend!",
-    date: "1 month ago"
+    text: "Saved me hundreds compared to the dealership quote. My car runs better than when I bought it. These guys know their stuff.",
+    date: "1 month ago",
+    service: "Engine Diagnostics"
   },
   {
     id: 3,
     name: "James K.",
     rating: 5,
-    text: "24/7 service is a lifesaver. Had a brake emergency at midnight and they took care of it immediately.",
-    date: "3 weeks ago"
+    text: "24/7 service is a lifesaver. Had a brake emergency at midnight and they took care of it immediately. Can't thank them enough.",
+    date: "3 weeks ago",
+    service: "Brake Service"
   },
   {
     id: 4,
     name: "Lisa M.",
     rating: 5,
-    text: "Their car wash detailing is incredible. My car looks brand new. Will definitely be back!",
-    date: "1 week ago"
+    text: "The detailing work is incredible. My 10-year-old car looks brand new. They pay attention to every single detail.",
+    date: "1 week ago",
+    service: "Full Detailing"
   },
   {
     id: 5,
     name: "David P.",
     rating: 5,
-    text: "Trustworthy mechanics who explain everything. No surprise charges. Finally found my go-to shop.",
-    date: "2 months ago"
+    text: "Finally found honest mechanics who explain everything without the jargon. No surprise charges, no upselling. Just great service.",
+    date: "2 months ago",
+    service: "Oil Change"
   },
   {
     id: 6,
     name: "Jennifer H.",
     rating: 5,
-    text: "Quick oil change and they noticed a potential issue before it became a problem. Great preventive care!",
-    date: "3 weeks ago"
+    text: "Quick oil change turned into them catching a potential issue before it became a major problem. That's real service.",
+    date: "3 weeks ago",
+    service: "Preventive Maintenance"
   }
 ];
 
@@ -110,15 +116,18 @@ export const SERVICE_TYPES = [
   "Other"
 ];
 
-// Images from design guidelines
+// Images 
 export const IMAGES = {
-  hero: "https://images.unsplash.com/photo-1756575527484-2839c593ed84?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwyfHxtZWNoYW5pYyUyMHdvcmtpbmclMjBvbiUyMGNhciUyMGRhcmslMjBtb29keXxlbnwwfHx8fDE3Njk3NTYzNDF8MA&ixlib=rb-4.1.0&q=85",
-  chicagoSkyline: "https://images.unsplash.com/photo-1599931088219-645e4174a4ea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxjaGljYWdvJTIwc2t5bGluZSUyMG5pZ2h0JTIwY2l0eSUyMGxpZ2h0c3xlbnwwfHx8fDE3Njk3NTYzNjB8MA&ixlib=rb-4.1.0&q=85",
-  mechanicPortrait: "https://images.unsplash.com/photo-1461938337379-4b537cd2db74?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwzfHxmcmllbmRseSUyMG1lY2hhbmljJTIwaG9sZGluZyUyMHdyZW5jaCUyMHBvcnRyYWl0fGVufDB8fHx8MTc2OTc1NjM3MXww&ixlib=rb-4.1.0&q=85",
-  serviceRepair: "https://images.unsplash.com/photo-1549047608-55b2fd4b8427?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBhdXRvJTIwcmVwYWlyJTIwc2hvcCUyMGludGVyaW9yJTIwbmlnaHR8ZW58MHx8fHwxNzY5NzU2MzQ1fDA&ixlib=rb-4.1.0&q=85",
-  serviceWash: "https://images.pexels.com/photos/6872609/pexels-photo-6872609.jpeg",
-  galleryBefore: "https://images.unsplash.com/photo-1756364897783-160a04249b99?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxkaXJ0eSUyMG11ZGR5JTIwY2FyJTIwZXh0ZXJpb3J8ZW58MHx8fHwxNzY5NzU2MzYzfDA&ixlib=rb-4.1.0&q=85",
-  galleryAfter: "https://images.unsplash.com/photo-1761119278824-bcb65edd36ca?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwyfHxzaGlueSUyMGNsZWFuJTIwbHV4dXJ5JTIwY2FyJTIwZXh0ZXJpb3IlMjBzdHVkaW98ZW58MHx8fHwxNzY5NzU2MzY5fDA&ixlib=rb-4.1.0&q=85"
+  hero: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?w=1920&q=80",
+  heroAlt: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1920&q=80",
+  chicagoSkyline: "https://images.unsplash.com/photo-1494522855154-9297ac14b55f?w=1920&q=80",
+  mechanicPortrait: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80",
+  serviceRepair: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?w=800&q=80",
+  serviceWash: "https://images.unsplash.com/photo-1601362840469-51e4d8d58785?w=800&q=80",
+  carDetail1: "https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?w=800&q=80",
+  carDetail2: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
+  galleryBefore: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+  galleryAfter: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80"
 };
 
 // Before/After Gallery Data
@@ -126,23 +135,23 @@ export const BEFORE_AFTER_GALLERY = [
   {
     id: 1,
     title: "Full Detail Transformation",
-    before: IMAGES.galleryBefore,
-    after: IMAGES.galleryAfter,
-    description: "Complete exterior wash and polish"
+    before: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80",
+    after: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=800&q=80",
+    description: "Complete exterior restoration and ceramic coating"
   },
   {
     id: 2,
-    title: "Engine Bay Cleaning",
-    before: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800",
-    after: "https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=800",
-    description: "Professional engine bay detailing"
+    title: "Engine Bay Restoration",
+    before: "https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=800&q=80",
+    after: "https://images.unsplash.com/photo-1580274455191-1c62238fa333?w=800&q=80",
+    description: "Professional engine bay degreasing and detailing"
   },
   {
     id: 3,
-    title: "Interior Deep Clean",
-    before: "https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=800",
-    after: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=800",
-    description: "Complete interior restoration"
+    title: "Interior Revival",
+    before: "https://images.unsplash.com/photo-1507136566006-cfc505b114fc?w=800&q=80",
+    after: "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=800&q=80",
+    description: "Deep interior cleaning and leather conditioning"
   }
 ];
 
@@ -151,17 +160,17 @@ export const SPECIALS = [
   {
     id: 1,
     title: "20% OFF",
-    subtitle: "All Services",
-    description: "New customers get 20% off their first service. Valid on all auto repair and car wash services.",
+    subtitle: "First Service",
+    description: "New customers receive 20% off their first service. Valid on all auto repair and car wash services.",
     terms: "Cannot be combined with other offers. Must mention at time of service.",
     active: true,
     featured: true
   },
   {
     id: 2,
-    title: "Free Inspection",
-    subtitle: "With Any Repair",
-    description: "Get a complimentary multi-point inspection when you bring your car in for any repair service.",
+    title: "Free",
+    subtitle: "Multi-Point Inspection",
+    description: "Complimentary comprehensive vehicle inspection with any repair service over $100.",
     terms: "Valid with paid repair service only.",
     active: true,
     featured: false
@@ -169,8 +178,8 @@ export const SPECIALS = [
   {
     id: 3,
     title: "Coming Soon",
-    subtitle: "Loyalty Program",
-    description: "Stay tuned for our upcoming loyalty rewards program with exclusive member benefits.",
+    subtitle: "VIP Membership",
+    description: "Exclusive member benefits including priority scheduling, discounts, and complimentary services.",
     terms: "Program details coming soon.",
     active: false,
     featured: false

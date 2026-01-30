@@ -8,8 +8,8 @@ module.exports = {
   theme: {
         extend: {
                 fontFamily: {
-                        heading: ['Oswald', 'sans-serif'],
-                        body: ['Inter', 'sans-serif'],
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Manrope', 'sans-serif'],
                 },
                 borderRadius: {
                         lg: 'var(--radius)',
@@ -17,9 +17,14 @@ module.exports = {
                         sm: 'calc(var(--radius) - 4px)'
                 },
                 colors: {
-                        midnight: '#020617',
-                        'neon-blue': '#2563EB',
-                        'neon-red': '#EF4444',
+                        'brand-maroon': '#800020',
+                        'brand-maroon-light': '#9A1B3D',
+                        'brand-maroon-dark': '#5C0018',
+                        'brand-gold': '#C9A962',
+                        'brand-gold-light': '#E8D5A3',
+                        'brand-cream': '#F5F0E8',
+                        'brand-charcoal': '#1A1A1A',
+                        'brand-dark': '#0A0A0A',
                         background: 'hsl(var(--background))',
                         foreground: 'hsl(var(--foreground))',
                         card: {
@@ -62,8 +67,9 @@ module.exports = {
                         }
                 },
                 boxShadow: {
-                        'neon': '0 0 20px -5px rgba(37, 99, 235, 0.5)',
-                        'neon-red': '0 0 20px -5px rgba(239, 68, 68, 0.5)',
+                        'maroon': '0 0 40px -10px rgba(128, 0, 32, 0.5)',
+                        'gold': '0 0 40px -10px rgba(201, 169, 98, 0.4)',
+                        'premium': '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
                 },
                 keyframes: {
                         'accordion-down': {
@@ -74,25 +80,30 @@ module.exports = {
                                 from: { height: 'var(--radix-accordion-content-height)' },
                                 to: { height: '0' }
                         },
-                        'pulse-glow': {
-                                '0%, 100%': { boxShadow: '0 0 20px -5px rgba(37, 99, 235, 0.5)' },
-                                '50%': { boxShadow: '0 0 30px -5px rgba(37, 99, 235, 0.8)' }
+                        'fade-up': {
+                                '0%': { opacity: '0', transform: 'translateY(40px)' },
+                                '100%': { opacity: '1', transform: 'translateY(0)' }
+                        },
+                        'fade-in': {
+                                '0%': { opacity: '0' },
+                                '100%': { opacity: '1' }
                         },
                         'marquee': {
                                 '0%': { transform: 'translateX(0%)' },
                                 '100%': { transform: 'translateX(-50%)' }
                         },
-                        'fade-up': {
-                                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                                '100%': { opacity: '1', transform: 'translateY(0)' }
+                        'float': {
+                                '0%, 100%': { transform: 'translateY(0)' },
+                                '50%': { transform: 'translateY(-10px)' }
                         }
                 },
                 animation: {
                         'accordion-down': 'accordion-down 0.2s ease-out',
                         'accordion-up': 'accordion-up 0.2s ease-out',
-                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
-                        'marquee': 'marquee 30s linear infinite',
-                        'fade-up': 'fade-up 0.6s ease-out forwards'
+                        'fade-up': 'fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                        'fade-in': 'fade-in 1s ease-out forwards',
+                        'marquee': 'marquee 40s linear infinite',
+                        'float': 'float 4s ease-in-out infinite'
                 }
         }
   },
