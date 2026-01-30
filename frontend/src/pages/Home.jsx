@@ -21,7 +21,7 @@ const CarSilhouette = ({ className = "" }) => (
 
 const Home = () => {
   return (
-    <div className="min-h-screen bg-brand-dark" data-testid="home-page">
+    <div className="min-h-screen bg-background" data-testid="home-page">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-32" data-testid="hero-section">
         {/* Background */}
@@ -30,8 +30,8 @@ const Home = () => {
             className="absolute inset-0 bg-cover bg-center"
             style={{ backgroundImage: `url(${IMAGES.hero})` }}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-dark via-brand-dark/95 to-brand-dark/60" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-brand-dark" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/95 to-background/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-background" />
         </div>
 
         {/* Decorative Elements */}
@@ -48,13 +48,13 @@ const Home = () => {
             </div>
 
             {/* Headline */}
-            <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-brand-cream leading-[0.95] mb-6 opacity-0 animate-fade-up animation-delay-100">
+            <h1 className="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight text-foreground leading-[0.95] mb-6 opacity-0 animate-fade-up animation-delay-100">
               Expert Auto
               <span className="block text-brand-maroon">Repair</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg lg:text-xl text-brand-cream/70 leading-relaxed mb-8 max-w-xl opacity-0 animate-fade-up animation-delay-200">
+            <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl opacity-0 animate-fade-up animation-delay-200">
               Chicago's trusted destination for professional auto repair and premium car wash services. Quality craftsmanship, honest pricing.
             </p>
 
@@ -65,7 +65,7 @@ const Home = () => {
               </div>
               <div>
                 <span className="text-brand-gold font-medium block">First Service</span>
-                <span className="text-brand-cream/50 text-sm">New customers only</span>
+                <span className="text-muted-foreground text-sm">New customers only</span>
               </div>
             </div>
 
@@ -84,7 +84,7 @@ const Home = () => {
                 <Button 
                   size="lg"
                   variant="outline"
-                  className="w-full sm:w-auto border-brand-cream/20 text-brand-cream hover:bg-brand-cream hover:text-brand-dark font-medium tracking-wide px-8 py-6 text-base transition-all duration-300"
+                  className="w-full sm:w-auto border-border text-foreground hover:bg-foreground hover:text-background font-medium tracking-wide px-8 py-6 text-base transition-all duration-300"
                 >
                   <Calendar className="w-5 h-5 mr-2" />
                   Book Appointment
@@ -96,8 +96,8 @@ const Home = () => {
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in animation-delay-600">
-          <span className="text-xs tracking-[0.2em] uppercase text-brand-cream/40">Scroll</span>
-          <ChevronDown className="w-5 h-5 text-brand-cream/40 animate-bounce" />
+          <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Scroll</span>
+          <ChevronDown className="w-5 h-5 text-muted-foreground animate-bounce" />
         </div>
       </section>
 
@@ -111,12 +111,12 @@ const Home = () => {
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8 mb-16">
             <div>
               <span className="text-brand-maroon font-medium text-sm tracking-[0.2em] uppercase mb-3 block">What We Do</span>
-              <h2 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-brand-cream line-accent">
+              <h2 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-foreground line-accent">
                 Our Services
               </h2>
             </div>
             <Link to="/services" className="group">
-              <Button variant="outline" className="border-white/10 text-brand-cream/80 hover:bg-brand-maroon hover:text-white hover:border-brand-maroon font-medium tracking-wide transition-all duration-300">
+              <Button variant="outline" className="border-border text-muted-foreground hover:bg-brand-maroon hover:text-white hover:border-brand-maroon font-medium tracking-wide transition-all duration-300">
                 View All Services
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
@@ -261,7 +261,7 @@ const Home = () => {
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8">
             <div>
               <span className="text-brand-gold font-medium text-sm tracking-[0.2em] uppercase mb-3 block">Testimonials</span>
-              <h2 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-brand-cream line-accent">
+              <h2 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-foreground line-accent">
                 What Customers Say
               </h2>
             </div>
