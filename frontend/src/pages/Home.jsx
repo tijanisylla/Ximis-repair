@@ -131,15 +131,15 @@ const Home = () => {
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                 style={{ backgroundImage: `url(${IMAGES.serviceRepair})` }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-brand-dark/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/20" />
               <div className="relative z-10 p-8 lg:p-10 h-full flex flex-col justify-end">
                 <div className="w-16 h-16 bg-brand-maroon flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <Wrench className="w-8 h-8 text-white" />
                 </div>
-                <h3 className="font-heading text-3xl lg:text-4xl font-bold tracking-tight text-brand-cream mb-4">
+                <h3 className="font-heading text-3xl lg:text-4xl font-bold tracking-tight text-foreground mb-4">
                   Auto Repair
                 </h3>
-                <p className="text-brand-cream/70 mb-8 max-w-md leading-relaxed">
+                <p className="text-muted-foreground mb-8 max-w-md leading-relaxed">
                   Complete auto repair services from diagnostics to engine rebuilds. ASE-certified mechanics available 24/7 for all your automotive needs.
                 </p>
                 <Link to="/services">
@@ -157,15 +157,15 @@ const Home = () => {
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                 style={{ backgroundImage: `url(${IMAGES.serviceWash})` }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/70 to-brand-dark/20" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/70 to-background/20" />
               <div className="relative z-10 p-8 lg:p-10 h-full flex flex-col justify-end">
                 <div className="w-16 h-16 bg-brand-gold flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                   <Droplets className="w-8 h-8 text-brand-dark" />
                 </div>
-                <h3 className="font-heading text-3xl lg:text-4xl font-bold tracking-tight text-brand-cream mb-4">
+                <h3 className="font-heading text-3xl lg:text-4xl font-bold tracking-tight text-foreground mb-4">
                   Car Wash & Detail
                 </h3>
-                <p className="text-brand-cream/70 mb-8 max-w-md leading-relaxed">
+                <p className="text-muted-foreground mb-8 max-w-md leading-relaxed">
                   Premium hand wash and detailing services. From quick exterior washes to complete interior restoration and ceramic coating.
                 </p>
                 <Link to="/services">
@@ -183,7 +183,7 @@ const Home = () => {
       {/* Specials Section */}
       <section className="py-24 lg:py-32 relative overflow-hidden" data-testid="specials-section">
         {/* Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-brand-maroon/10 via-brand-dark to-brand-dark" />
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-maroon/10 via-background to-background" />
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-maroon/5 rounded-full blur-3xl" />
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
@@ -191,13 +191,13 @@ const Home = () => {
             {/* Content */}
             <div>
               <span className="text-brand-gold font-medium text-sm tracking-[0.2em] uppercase mb-3 block">Limited Time Offer</span>
-              <h2 className="font-heading text-4xl lg:text-6xl font-bold tracking-tight text-brand-cream mb-6 line-accent">
+              <h2 className="font-heading text-4xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 line-accent">
                 Save <span className="text-brand-maroon">{BUSINESS.promo}</span>
               </h2>
-              <p className="text-brand-cream/70 text-lg leading-relaxed mb-8">
+              <p className="text-muted-foreground text-lg leading-relaxed mb-8">
                 New customers receive 20% off their first service. Whether you need a brake job, oil change, or full detail - experience the XIMI'S difference at a great price.
               </p>
-              <p className="text-brand-cream/40 text-sm mb-10 border-l-2 border-brand-maroon/30 pl-4">
+              <p className="text-muted-foreground text-sm mb-10 border-l-2 border-brand-maroon/30 pl-4">
                 Cannot be combined with other offers. Must mention at time of service.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -208,7 +208,7 @@ const Home = () => {
                   </Button>
                 </a>
                 <Link to="/specials">
-                  <Button variant="outline" className="w-full sm:w-auto border-white/10 text-brand-cream/80 hover:bg-white/5 font-medium tracking-wide transition-all duration-300">
+                  <Button variant="outline" className="w-full sm:w-auto border-border text-muted-foreground hover:bg-muted font-medium tracking-wide transition-all duration-300">
                     View All Specials
                   </Button>
                 </Link>
@@ -219,10 +219,10 @@ const Home = () => {
             <div className="relative flex justify-center lg:justify-end">
               <div className="relative">
                 {/* Main Box */}
-                <div className="w-72 h-72 lg:w-80 lg:h-80 bg-brand-charcoal border border-white/10 flex items-center justify-center relative">
+                <div className="w-72 h-72 lg:w-80 lg:h-80 bg-card border border-border flex items-center justify-center relative">
                   <div className="text-center">
                     <span className="font-heading text-7xl lg:text-8xl font-bold text-brand-maroon">20%</span>
-                    <p className="font-heading text-xl tracking-[0.2em] uppercase text-brand-cream mt-2">OFF</p>
+                    <p className="font-heading text-xl tracking-[0.2em] uppercase text-foreground mt-2">OFF</p>
                   </div>
                   
                   {/* Corner accents */}
