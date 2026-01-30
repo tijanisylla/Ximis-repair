@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Phone, Menu, X } from 'lucide-react';
+import { Phone, Menu, X, Sun, Moon } from 'lucide-react';
 import { Button } from '../ui/button';
+import { useTheme } from '../ThemeProvider';
 import { BUSINESS } from '../../data/business';
 
 // Car silhouette SVG component matching the logo
@@ -20,6 +21,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,7 +79,7 @@ export const Navbar = () => {
                 <CarLogo className="w-16 h-12 text-brand-maroon group-hover:text-brand-gold transition-colors duration-300" />
               </div>
               <div className="hidden sm:block">
-                <h1 className="font-heading text-xl font-bold tracking-tight text-brand-cream leading-none">
+                <h1 className="font-heading text-xl font-bold tracking-tight text-foreground leading-none">
                   XIMI'S
                 </h1>
                 <p className="text-[10px] text-brand-gold tracking-[0.3em] uppercase font-medium">Auto Repair</p>
@@ -93,7 +95,7 @@ export const Navbar = () => {
                   className={`relative text-sm font-medium tracking-wide transition-colors group ${
                     isActive(link.path)
                       ? 'text-brand-gold'
-                      : 'text-brand-cream/80 hover:text-brand-cream'
+                      : 'text-foreground/80 hover:text-foreground'
                   }`}
                   data-testid={`nav-link-${link.label.toLowerCase().replace(' ', '-')}`}
                 >
@@ -105,8 +107,22 @@ export const Navbar = () => {
               ))}
             </div>
 
-            {/* Desktop CTA */}
-            <div className="hidden lg:flex items-center gap-4">
+            {/* Desktop CTA & Theme Toggle */}
+            <div className="hidden lg:flex items-center gap-3">
+              {/* Theme Toggle */}
+              <button
+                onClick={toggleTheme}
+                className="p-2.5 border border-border hover:border-brand-maroon rounded-none transition-all duration-300 hover:bg-brand-maroon/10"
+                aria-label="Toggle theme"
+                data-testid="theme-toggle"
+              >
+                {theme === 'dark' ? (
+                  <Sun className="w-5 h-5 text-brand-gold" />
+                ) : (
+                  <Moon className="w-5 h-5 text-brand-maroon" />
+                )}
+              </button>
+
               <a href={BUSINESS.phoneLink} data-testid="navbar-call-btn">
                 <Button 
                   className="bg-brand-maroon hover:bg-brand-maroon-light text-white font-medium tracking-wide px-6 py-5 transition-all duration-300 btn-premium"
@@ -117,21 +133,35 @@ export const Navbar = () => {
               </a>
             </div>
 
-            {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2 text-brand-cream hover:text-brand-gold transition-colors"
-              onClick={() => setIsOpen(!isOpen)}
-              aria-label="Toggle menu"
-              data-testid="mobile-menu-toggle"
-            >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Mobile: Theme Toggle & Menu Button */}
+            <div className="lg:hidden flex items-center gap-2">
+              <button
+                onClick={toggleTheme}
+                className="p-2 border border-border hover:border-brand-maroon transition-colors"
+                aria-label="Toggle theme"
+                data-testid="mobile-theme-toggle"
+              >
+                {theme === 'dark' ? (
+                  <Sun className="w-5 h-5 text-brand-gold" />
+                ) : (
+                  <Moon className="w-5 h-5 text-brand-maroon" />
+                )}
+              </button>
+              <button
+                className="p-2 text-foreground hover:text-brand-gold transition-colors"
+                onClick={() => setIsOpen(!isOpen)}
+                aria-label="Toggle menu"
+                data-testid="mobile-menu-toggle"
+              >
+                {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
         </div>
 
         {/* Mobile Menu */}
         <div 
-          className={`lg:hidden absolute top-full left-0 right-0 bg-brand-dark/98 backdrop-blur-xl border-t border-white/5 transition-all duration-300 overflow-hidden ${
+          className={`lg:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-xl border-t border-border transition-all duration-300 overflow-hidden ${
             isOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
           }`}
           data-testid="mobile-menu"
@@ -141,10 +171,10 @@ export const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`block py-3 text-lg font-medium tracking-wide transition-colors border-b border-white/5 ${
+                className={`block py-3 text-lg font-medium tracking-wide transition-colors border-b border-border/50 ${
                   isActive(link.path)
                     ? 'text-brand-gold'
-                    : 'text-brand-cream/80 hover:text-brand-cream'
+                    : 'text-foreground/80 hover:text-foreground'
                 }`}
                 onClick={() => setIsOpen(false)}
                 data-testid={`mobile-nav-${link.label.toLowerCase().replace(' ', '-')}`}
