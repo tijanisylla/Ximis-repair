@@ -1,35 +1,40 @@
-import { Award, Clock, DollarSign, MapPin } from 'lucide-react';
+import { Award, Clock, Shield, MapPin } from 'lucide-react';
 import { TRUST_INDICATORS } from '../../data/business';
 
 const iconMap = {
   Award,
   Clock,
-  DollarSign,
+  Shield,
   MapPin
 };
 
 export const TrustBar = () => {
   return (
     <div 
-      className="bg-slate-900/50 border-y border-white/10 py-6"
+      className="bg-brand-charcoal/50 border-y border-white/5 py-8 lg:py-10"
       data-testid="trust-bar"
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-16">
           {TRUST_INDICATORS.map((item, index) => {
             const Icon = iconMap[item.icon];
             return (
               <div 
                 key={index}
-                className="flex items-center gap-3 group"
+                className="flex items-start gap-4 group"
                 data-testid={`trust-item-${index}`}
               >
-                <div className="w-10 h-10 bg-neon-blue/10 border border-neon-blue/30 flex items-center justify-center flex-shrink-0 group-hover:bg-neon-blue/20 transition-colors">
-                  <Icon className="w-5 h-5 text-neon-blue" />
+                <div className="w-12 h-12 bg-brand-maroon/10 border border-brand-maroon/20 flex items-center justify-center flex-shrink-0 group-hover:bg-brand-maroon/20 group-hover:border-brand-maroon/40 transition-all duration-300">
+                  <Icon className="w-5 h-5 text-brand-maroon" />
                 </div>
-                <span className="font-heading text-sm md:text-base tracking-wider uppercase text-slate-300">
-                  {item.text}
-                </span>
+                <div>
+                  <span className="font-heading text-base font-semibold text-brand-cream block">
+                    {item.text}
+                  </span>
+                  <span className="text-xs text-brand-cream/50 mt-0.5 block">
+                    {item.description}
+                  </span>
+                </div>
               </div>
             );
           })}

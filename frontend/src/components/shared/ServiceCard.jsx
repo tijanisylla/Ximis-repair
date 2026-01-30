@@ -8,21 +8,26 @@ export const ServiceCard = ({ service, variant = 'default' }) => {
   
   return (
     <div 
-      className={`group relative bg-slate-900/50 border border-white/10 p-6 transition-all duration-300 hover:border-neon-blue hover:shadow-neon ${
-        variant === 'compact' ? 'p-4' : 'p-6'
+      className={`group relative bg-brand-charcoal/50 border border-white/5 transition-all duration-500 card-hover ${
+        variant === 'compact' ? 'p-5' : 'p-6 lg:p-8'
       }`}
       data-testid={`service-card-${service.id}`}
     >
+      {/* Corner Accent */}
+      <div className="absolute top-0 right-0 w-12 h-12 overflow-hidden">
+        <div className="absolute top-0 right-0 w-24 h-1 bg-gradient-to-l from-brand-maroon to-transparent transform rotate-45 origin-right translate-y-6 -translate-x-2" />
+      </div>
+
       {/* Icon */}
-      <div className="w-12 h-12 bg-neon-blue/10 border border-neon-blue/30 flex items-center justify-center mb-4 group-hover:bg-neon-blue/20 transition-colors">
-        <IconComponent className="w-6 h-6 text-neon-blue" />
+      <div className="w-14 h-14 bg-brand-maroon/10 border border-brand-maroon/20 flex items-center justify-center mb-5 group-hover:bg-brand-maroon/20 group-hover:border-brand-maroon/40 transition-all duration-300">
+        <IconComponent className="w-6 h-6 text-brand-maroon group-hover:scale-110 transition-transform" />
       </div>
 
       {/* Content */}
-      <h3 className="font-heading text-lg font-bold tracking-wide text-white mb-2">
+      <h3 className="font-heading text-xl font-semibold tracking-wide text-brand-cream mb-3">
         {service.name}
       </h3>
-      <p className="text-slate-400 text-sm leading-relaxed mb-4">
+      <p className="text-brand-cream/60 text-sm leading-relaxed mb-6">
         {service.description}
       </p>
 
@@ -31,17 +36,17 @@ export const ServiceCard = ({ service, variant = 'default' }) => {
         <a href={BUSINESS.phoneLink}>
           <Button 
             variant="outline" 
-            className="w-full border-white/20 text-slate-300 hover:bg-neon-blue hover:text-white hover:border-neon-blue font-heading tracking-wider text-xs uppercase transition-all"
+            className="w-full border-white/10 text-brand-cream/80 hover:bg-brand-maroon hover:text-white hover:border-brand-maroon font-medium text-xs tracking-wide transition-all duration-300"
             data-testid={`service-cta-${service.id}`}
           >
             <Phone className="w-3 h-3 mr-2" />
-            Call to Confirm Pricing
+            Call for Pricing
           </Button>
         </a>
       )}
 
-      {/* Hover Accent */}
-      <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-neon-blue group-hover:w-full transition-all duration-300" />
+      {/* Bottom Line */}
+      <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-brand-maroon to-brand-gold group-hover:w-full transition-all duration-500" />
     </div>
   );
 };
