@@ -47,12 +47,8 @@ const BookAppointment = () => {
       return;
     }
 
-    // Store in local state (no backend)
     console.log('Appointment Request:', formData);
-    
-    // Show success toast
     toast.success('Appointment request submitted! We will call you shortly to confirm.');
-    
     setIsSubmitted(true);
   };
 
@@ -65,31 +61,31 @@ const BookAppointment = () => {
 
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-midnight pt-32 md:pt-40" data-testid="book-success">
-        <div className="max-w-2xl mx-auto px-6 md:px-12 py-20 text-center">
-          <div className="w-20 h-20 bg-green-500/20 border border-green-500/50 flex items-center justify-center mx-auto mb-8">
+      <div className="min-h-screen bg-brand-dark pt-36 lg:pt-44" data-testid="book-success">
+        <div className="max-w-2xl mx-auto px-6 lg:px-12 py-20 text-center">
+          <div className="w-20 h-20 bg-green-500/10 border border-green-500/30 flex items-center justify-center mx-auto mb-8">
             <CheckCircle className="w-10 h-10 text-green-500" />
           </div>
-          <h1 className="font-heading text-4xl md:text-5xl font-bold tracking-tight uppercase text-white mb-6">
+          <h1 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-brand-cream mb-6">
             Request Received
           </h1>
-          <p className="text-slate-300 text-lg mb-8">
-            Thank you for choosing {BUSINESS.name}. We've received your appointment request and will call you at <strong className="text-white">{formData.phone}</strong> to confirm the details.
+          <p className="text-brand-cream/70 text-lg mb-10">
+            Thank you for choosing {BUSINESS.name}. We've received your appointment request and will call you at <strong className="text-brand-cream">{formData.phone}</strong> to confirm the details.
           </p>
-          <div className="bg-slate-900/50 border border-white/10 p-6 mb-8 text-left">
-            <h3 className="font-heading text-lg tracking-wider uppercase text-white mb-4">Request Summary</h3>
-            <div className="space-y-2 text-sm text-slate-400">
-              <p><span className="text-slate-500">Service:</span> {formData.serviceType}</p>
-              <p><span className="text-slate-500">Vehicle:</span> {formData.vehicleYear} {formData.vehicleMake} {formData.vehicleModel}</p>
-              <p><span className="text-slate-500">Preferred Date:</span> {formData.preferredDate}</p>
-              <p><span className="text-slate-500">Preferred Time:</span> {formData.preferredTime}</p>
+          <div className="bg-brand-charcoal/50 border border-white/5 p-8 mb-10 text-left">
+            <h3 className="font-heading text-lg tracking-wide text-brand-cream mb-5 pb-3 border-b border-white/10">Request Summary</h3>
+            <div className="space-y-3 text-sm">
+              <p className="flex justify-between"><span className="text-brand-cream/50">Service:</span> <span className="text-brand-cream">{formData.serviceType}</span></p>
+              <p className="flex justify-between"><span className="text-brand-cream/50">Vehicle:</span> <span className="text-brand-cream">{formData.vehicleYear} {formData.vehicleMake} {formData.vehicleModel}</span></p>
+              <p className="flex justify-between"><span className="text-brand-cream/50">Preferred Date:</span> <span className="text-brand-cream">{formData.preferredDate}</span></p>
+              <p className="flex justify-between"><span className="text-brand-cream/50">Preferred Time:</span> <span className="text-brand-cream">{formData.preferredTime}</span></p>
             </div>
           </div>
-          <p className="text-slate-500 text-sm mb-8">
+          <p className="text-brand-cream/50 text-sm mb-8">
             Need immediate assistance? Call us directly.
           </p>
           <a href={BUSINESS.phoneLink}>
-            <Button className="bg-neon-blue hover:bg-neon-blue/90 text-white font-heading tracking-wider uppercase px-8 transition-all hover:shadow-neon">
+            <Button className="bg-brand-maroon hover:bg-brand-maroon-light text-white font-medium tracking-wide px-8 transition-all duration-300">
               <Phone className="w-4 h-4 mr-2" />
               {BUSINESS.phone}
             </Button>
@@ -100,61 +96,61 @@ const BookAppointment = () => {
   }
 
   return (
-    <div className="min-h-screen bg-midnight pt-32 md:pt-40" data-testid="book-page">
-      <div className="max-w-6xl mx-auto px-6 md:px-12 pb-20">
-        <div className="grid lg:grid-cols-3 gap-12">
+    <div className="min-h-screen bg-brand-dark pt-36 lg:pt-44" data-testid="book-page">
+      <div className="max-w-6xl mx-auto px-6 lg:px-12 pb-24">
+        <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
           {/* Form Section */}
           <div className="lg:col-span-2">
-            <span className="text-neon-blue font-heading text-sm tracking-widest uppercase mb-2 block">Schedule Service</span>
-            <h1 className="font-heading text-4xl md:text-5xl font-bold tracking-tight uppercase text-white mb-6">
+            <span className="text-brand-maroon font-medium text-sm tracking-[0.2em] uppercase mb-3 block">Schedule Service</span>
+            <h1 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-brand-cream mb-6 line-accent">
               Book Appointment
             </h1>
-            <p className="text-slate-300 mb-8">
+            <p className="text-brand-cream/70 mb-10">
               Fill out the form below and we'll contact you to confirm your appointment. All fields marked with * are required.
             </p>
 
-            <form onSubmit={handleSubmit} className="space-y-8" data-testid="booking-form">
+            <form onSubmit={handleSubmit} className="space-y-10" data-testid="booking-form">
               {/* Contact Info */}
               <div className="space-y-6">
-                <h3 className="font-heading text-lg tracking-wider uppercase text-white border-b border-white/10 pb-3">
+                <h3 className="font-heading text-lg tracking-wide text-brand-cream border-b border-white/10 pb-4">
                   Contact Information
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name" className="text-slate-300">Name *</Label>
+                    <Label htmlFor="name" className="text-brand-cream/80 text-sm">Name *</Label>
                     <Input
                       id="name"
                       value={formData.name}
                       onChange={(e) => handleInputChange('name', e.target.value)}
                       placeholder="Your full name"
-                      className={`bg-slate-900 border-white/20 text-white placeholder:text-slate-500 focus:border-neon-blue ${errors.name ? 'border-neon-red' : ''}`}
+                      className={`bg-brand-charcoal/50 border-white/10 text-brand-cream placeholder:text-brand-cream/30 focus:border-brand-maroon h-12 ${errors.name ? 'border-red-500' : ''}`}
                       data-testid="input-name"
                     />
-                    {errors.name && <p className="text-neon-red text-xs">{errors.name}</p>}
+                    {errors.name && <p className="text-red-500 text-xs">{errors.name}</p>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-slate-300">Phone *</Label>
+                    <Label htmlFor="phone" className="text-brand-cream/80 text-sm">Phone *</Label>
                     <Input
                       id="phone"
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => handleInputChange('phone', e.target.value)}
                       placeholder="(555) 555-5555"
-                      className={`bg-slate-900 border-white/20 text-white placeholder:text-slate-500 focus:border-neon-blue ${errors.phone ? 'border-neon-red' : ''}`}
+                      className={`bg-brand-charcoal/50 border-white/10 text-brand-cream placeholder:text-brand-cream/30 focus:border-brand-maroon h-12 ${errors.phone ? 'border-red-500' : ''}`}
                       data-testid="input-phone"
                     />
-                    {errors.phone && <p className="text-neon-red text-xs">{errors.phone}</p>}
+                    {errors.phone && <p className="text-red-500 text-xs">{errors.phone}</p>}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="email" className="text-slate-300">Email (Optional)</Label>
+                  <Label htmlFor="email" className="text-brand-cream/80 text-sm">Email (Optional)</Label>
                   <Input
                     id="email"
                     type="email"
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
                     placeholder="your@email.com"
-                    className="bg-slate-900 border-white/20 text-white placeholder:text-slate-500 focus:border-neon-blue"
+                    className="bg-brand-charcoal/50 border-white/10 text-brand-cream placeholder:text-brand-cream/30 focus:border-brand-maroon h-12"
                     data-testid="input-email"
                   />
                 </div>
@@ -162,130 +158,130 @@ const BookAppointment = () => {
 
               {/* Vehicle Info */}
               <div className="space-y-6">
-                <h3 className="font-heading text-lg tracking-wider uppercase text-white border-b border-white/10 pb-3">
+                <h3 className="font-heading text-lg tracking-wide text-brand-cream border-b border-white/10 pb-4">
                   Vehicle Information
                 </h3>
                 <div className="grid sm:grid-cols-3 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="vehicleYear" className="text-slate-300">Year *</Label>
+                    <Label htmlFor="vehicleYear" className="text-brand-cream/80 text-sm">Year *</Label>
                     <Input
                       id="vehicleYear"
                       value={formData.vehicleYear}
                       onChange={(e) => handleInputChange('vehicleYear', e.target.value)}
                       placeholder="2024"
-                      className={`bg-slate-900 border-white/20 text-white placeholder:text-slate-500 focus:border-neon-blue ${errors.vehicleYear ? 'border-neon-red' : ''}`}
+                      className={`bg-brand-charcoal/50 border-white/10 text-brand-cream placeholder:text-brand-cream/30 focus:border-brand-maroon h-12 ${errors.vehicleYear ? 'border-red-500' : ''}`}
                       data-testid="input-year"
                     />
-                    {errors.vehicleYear && <p className="text-neon-red text-xs">{errors.vehicleYear}</p>}
+                    {errors.vehicleYear && <p className="text-red-500 text-xs">{errors.vehicleYear}</p>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="vehicleMake" className="text-slate-300">Make *</Label>
+                    <Label htmlFor="vehicleMake" className="text-brand-cream/80 text-sm">Make *</Label>
                     <Input
                       id="vehicleMake"
                       value={formData.vehicleMake}
                       onChange={(e) => handleInputChange('vehicleMake', e.target.value)}
                       placeholder="Toyota"
-                      className={`bg-slate-900 border-white/20 text-white placeholder:text-slate-500 focus:border-neon-blue ${errors.vehicleMake ? 'border-neon-red' : ''}`}
+                      className={`bg-brand-charcoal/50 border-white/10 text-brand-cream placeholder:text-brand-cream/30 focus:border-brand-maroon h-12 ${errors.vehicleMake ? 'border-red-500' : ''}`}
                       data-testid="input-make"
                     />
-                    {errors.vehicleMake && <p className="text-neon-red text-xs">{errors.vehicleMake}</p>}
+                    {errors.vehicleMake && <p className="text-red-500 text-xs">{errors.vehicleMake}</p>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="vehicleModel" className="text-slate-300">Model *</Label>
+                    <Label htmlFor="vehicleModel" className="text-brand-cream/80 text-sm">Model *</Label>
                     <Input
                       id="vehicleModel"
                       value={formData.vehicleModel}
                       onChange={(e) => handleInputChange('vehicleModel', e.target.value)}
                       placeholder="Camry"
-                      className={`bg-slate-900 border-white/20 text-white placeholder:text-slate-500 focus:border-neon-blue ${errors.vehicleModel ? 'border-neon-red' : ''}`}
+                      className={`bg-brand-charcoal/50 border-white/10 text-brand-cream placeholder:text-brand-cream/30 focus:border-brand-maroon h-12 ${errors.vehicleModel ? 'border-red-500' : ''}`}
                       data-testid="input-model"
                     />
-                    {errors.vehicleModel && <p className="text-neon-red text-xs">{errors.vehicleModel}</p>}
+                    {errors.vehicleModel && <p className="text-red-500 text-xs">{errors.vehicleModel}</p>}
                   </div>
                 </div>
               </div>
 
               {/* Service & Schedule */}
               <div className="space-y-6">
-                <h3 className="font-heading text-lg tracking-wider uppercase text-white border-b border-white/10 pb-3">
+                <h3 className="font-heading text-lg tracking-wide text-brand-cream border-b border-white/10 pb-4">
                   Service & Schedule
                 </h3>
                 <div className="space-y-2">
-                  <Label className="text-slate-300">Service Type *</Label>
+                  <Label className="text-brand-cream/80 text-sm">Service Type *</Label>
                   <Select 
                     value={formData.serviceType} 
                     onValueChange={(value) => handleInputChange('serviceType', value)}
                   >
                     <SelectTrigger 
-                      className={`bg-slate-900 border-white/20 text-white focus:border-neon-blue ${errors.serviceType ? 'border-neon-red' : ''}`}
+                      className={`bg-brand-charcoal/50 border-white/10 text-brand-cream focus:border-brand-maroon h-12 ${errors.serviceType ? 'border-red-500' : ''}`}
                       data-testid="select-service"
                     >
                       <SelectValue placeholder="Select a service" />
                     </SelectTrigger>
-                    <SelectContent className="bg-slate-900 border-white/20">
+                    <SelectContent className="bg-brand-charcoal border-white/10">
                       {SERVICE_TYPES.map((service) => (
                         <SelectItem 
                           key={service} 
                           value={service}
-                          className="text-white hover:bg-neon-blue/20 focus:bg-neon-blue/20"
+                          className="text-brand-cream hover:bg-brand-maroon/20 focus:bg-brand-maroon/20"
                         >
                           {service}
                         </SelectItem>
                       ))}
                     </SelectContent>
                   </Select>
-                  {errors.serviceType && <p className="text-neon-red text-xs">{errors.serviceType}</p>}
+                  {errors.serviceType && <p className="text-red-500 text-xs">{errors.serviceType}</p>}
                 </div>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <Label htmlFor="preferredDate" className="text-slate-300">Preferred Date *</Label>
+                    <Label htmlFor="preferredDate" className="text-brand-cream/80 text-sm">Preferred Date *</Label>
                     <Input
                       id="preferredDate"
                       type="date"
                       value={formData.preferredDate}
                       onChange={(e) => handleInputChange('preferredDate', e.target.value)}
                       min={new Date().toISOString().split('T')[0]}
-                      className={`bg-slate-900 border-white/20 text-white focus:border-neon-blue ${errors.preferredDate ? 'border-neon-red' : ''}`}
+                      className={`bg-brand-charcoal/50 border-white/10 text-brand-cream focus:border-brand-maroon h-12 ${errors.preferredDate ? 'border-red-500' : ''}`}
                       data-testid="input-date"
                     />
-                    {errors.preferredDate && <p className="text-neon-red text-xs">{errors.preferredDate}</p>}
+                    {errors.preferredDate && <p className="text-red-500 text-xs">{errors.preferredDate}</p>}
                   </div>
                   <div className="space-y-2">
-                    <Label htmlFor="preferredTime" className="text-slate-300">Preferred Time *</Label>
+                    <Label htmlFor="preferredTime" className="text-brand-cream/80 text-sm">Preferred Time *</Label>
                     <Select 
                       value={formData.preferredTime} 
                       onValueChange={(value) => handleInputChange('preferredTime', value)}
                     >
                       <SelectTrigger 
-                        className={`bg-slate-900 border-white/20 text-white focus:border-neon-blue ${errors.preferredTime ? 'border-neon-red' : ''}`}
+                        className={`bg-brand-charcoal/50 border-white/10 text-brand-cream focus:border-brand-maroon h-12 ${errors.preferredTime ? 'border-red-500' : ''}`}
                         data-testid="select-time"
                       >
                         <SelectValue placeholder="Select a time" />
                       </SelectTrigger>
-                      <SelectContent className="bg-slate-900 border-white/20">
+                      <SelectContent className="bg-brand-charcoal border-white/10">
                         {['Morning (8AM - 12PM)', 'Afternoon (12PM - 5PM)', 'Evening (5PM - 9PM)', 'Night (9PM - 8AM)'].map((time) => (
                           <SelectItem 
                             key={time} 
                             value={time}
-                            className="text-white hover:bg-neon-blue/20 focus:bg-neon-blue/20"
+                            className="text-brand-cream hover:bg-brand-maroon/20 focus:bg-brand-maroon/20"
                           >
                             {time}
                           </SelectItem>
                         ))}
                       </SelectContent>
                     </Select>
-                    {errors.preferredTime && <p className="text-neon-red text-xs">{errors.preferredTime}</p>}
+                    {errors.preferredTime && <p className="text-red-500 text-xs">{errors.preferredTime}</p>}
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="notes" className="text-slate-300">Additional Notes (Optional)</Label>
+                  <Label htmlFor="notes" className="text-brand-cream/80 text-sm">Additional Notes (Optional)</Label>
                   <Textarea
                     id="notes"
                     value={formData.notes}
                     onChange={(e) => handleInputChange('notes', e.target.value)}
                     placeholder="Describe your issue or any special requests..."
                     rows={4}
-                    className="bg-slate-900 border-white/20 text-white placeholder:text-slate-500 focus:border-neon-blue resize-none"
+                    className="bg-brand-charcoal/50 border-white/10 text-brand-cream placeholder:text-brand-cream/30 focus:border-brand-maroon resize-none"
                     data-testid="input-notes"
                   />
                 </div>
@@ -295,7 +291,7 @@ const BookAppointment = () => {
               <Button 
                 type="submit" 
                 size="lg"
-                className="w-full bg-neon-blue hover:bg-neon-blue/90 text-white font-heading tracking-wider uppercase py-6 text-base transition-all hover:shadow-neon"
+                className="w-full bg-brand-maroon hover:bg-brand-maroon-light text-white font-medium tracking-wide py-6 text-base transition-all duration-300 btn-premium"
                 data-testid="submit-booking"
               >
                 <Calendar className="w-5 h-5 mr-2" />
@@ -307,16 +303,16 @@ const BookAppointment = () => {
           {/* Sidebar */}
           <div className="space-y-8">
             {/* Urgent Help Panel */}
-            <div className="bg-neon-red/10 border border-neon-red/30 p-6" data-testid="urgent-help-panel">
+            <div className="bg-brand-maroon/10 border border-brand-maroon/30 p-6" data-testid="urgent-help-panel">
               <div className="flex items-center gap-3 mb-4">
-                <AlertTriangle className="w-6 h-6 text-neon-red" />
-                <h3 className="font-heading text-lg tracking-wider uppercase text-white">Need Urgent Help?</h3>
+                <AlertTriangle className="w-5 h-5 text-brand-maroon" />
+                <h3 className="font-heading text-lg tracking-wide text-brand-cream">Need Urgent Help?</h3>
               </div>
-              <p className="text-slate-300 text-sm mb-6">
+              <p className="text-brand-cream/60 text-sm mb-6">
                 For emergency repairs or immediate assistance, call us directly. We're available 24/7.
               </p>
               <a href={BUSINESS.phoneLink}>
-                <Button className="w-full bg-neon-red hover:bg-neon-red/90 text-white font-heading tracking-wider uppercase transition-all hover:shadow-[0_0_20px_-5px_rgba(239,68,68,0.5)]">
+                <Button className="w-full bg-brand-maroon hover:bg-brand-maroon-light text-white font-medium tracking-wide transition-all duration-300">
                   <Phone className="w-4 h-4 mr-2" />
                   Call Now
                 </Button>
@@ -324,25 +320,25 @@ const BookAppointment = () => {
             </div>
 
             {/* Hours */}
-            <div className="bg-slate-900/50 border border-white/10 p-6">
+            <div className="bg-brand-charcoal/50 border border-white/5 p-6">
               <div className="flex items-center gap-3 mb-4">
-                <Clock className="w-6 h-6 text-neon-blue" />
-                <h3 className="font-heading text-lg tracking-wider uppercase text-white">Hours</h3>
+                <Clock className="w-5 h-5 text-brand-gold" />
+                <h3 className="font-heading text-lg tracking-wide text-brand-cream">Hours</h3>
               </div>
-              <p className="text-slate-300">
-                We're open <span className="text-neon-blue font-bold">24/7</span> for your convenience.
+              <p className="text-brand-cream/80">
+                We're open <span className="text-brand-gold font-semibold">24/7</span> for your convenience.
               </p>
-              <p className="text-slate-500 text-sm mt-2">
+              <p className="text-brand-cream/50 text-sm mt-3">
                 {BUSINESS.address.full}
               </p>
             </div>
 
             {/* Promo */}
-            <div className="bg-slate-900/50 border border-neon-blue/30 p-6">
+            <div className="bg-brand-charcoal/50 border border-brand-maroon/20 p-6">
               <div className="text-center">
-                <span className="font-heading text-4xl font-bold text-neon-blue">{BUSINESS.promo}</span>
-                <p className="font-heading text-sm tracking-widest uppercase text-white mt-2">New Customers</p>
-                <p className="text-slate-400 text-sm mt-4">
+                <span className="font-heading text-4xl font-bold text-brand-maroon">{BUSINESS.promo}</span>
+                <p className="font-heading text-sm tracking-[0.15em] uppercase text-brand-cream mt-2">New Customers</p>
+                <p className="text-brand-cream/50 text-sm mt-4">
                   Mention this offer when you call to confirm your appointment.
                 </p>
               </div>

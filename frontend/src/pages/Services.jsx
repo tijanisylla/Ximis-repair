@@ -1,32 +1,32 @@
 import { Link } from 'react-router-dom';
-import { Phone, Calendar, Wrench, Droplets } from 'lucide-react';
+import { Phone, Calendar, Wrench, Droplets, ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { ServiceCard } from '../components/shared/ServiceCard';
 import { BUSINESS, AUTO_REPAIR_SERVICES, CAR_WASH_SERVICES, IMAGES } from '../data/business';
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-midnight pt-32 md:pt-40" data-testid="services-page">
+    <div className="min-h-screen bg-brand-dark pt-36 lg:pt-44" data-testid="services-page">
       {/* Hero */}
-      <section className="max-w-7xl mx-auto px-6 md:px-12 mb-20">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-24">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-neon-blue font-heading text-sm tracking-widest uppercase mb-2 block">Our Services</span>
-            <h1 className="font-heading text-4xl md:text-6xl font-bold tracking-tight uppercase text-white mb-6">
+            <span className="text-brand-maroon font-medium text-sm tracking-[0.2em] uppercase mb-3 block">Our Services</span>
+            <h1 className="font-heading text-4xl lg:text-6xl font-bold tracking-tight text-brand-cream mb-6 line-accent">
               Complete Auto Care
             </h1>
-            <p className="text-slate-300 text-lg leading-relaxed mb-8">
-              From routine maintenance to major repairs, our ASE-certified technicians handle it all. Plus premium car wash and detailing services to keep your vehicle looking its best.
+            <p className="text-brand-cream/70 text-lg leading-relaxed mb-10">
+              From routine maintenance to major repairs, our ASE-certified technicians handle it all with precision and care. Plus premium car wash and detailing services to keep your vehicle looking showroom fresh.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href={BUSINESS.phoneLink}>
-                <Button className="w-full sm:w-auto bg-neon-blue hover:bg-neon-blue/90 text-white font-heading tracking-wider uppercase px-8 transition-all hover:shadow-neon">
+                <Button className="w-full sm:w-auto bg-brand-maroon hover:bg-brand-maroon-light text-white font-medium tracking-wide px-8 transition-all duration-300 btn-premium">
                   <Phone className="w-4 h-4 mr-2" />
                   Call for Quote
                 </Button>
               </a>
               <Link to="/book">
-                <Button variant="outline" className="w-full sm:w-auto border-white/20 text-slate-300 hover:bg-white/10 font-heading tracking-wider uppercase transition-all">
+                <Button variant="outline" className="w-full sm:w-auto border-white/10 text-brand-cream/80 hover:bg-white/5 font-medium tracking-wide transition-all duration-300">
                   <Calendar className="w-4 h-4 mr-2" />
                   Book Online
                 </Button>
@@ -37,26 +37,28 @@ const Services = () => {
             <img 
               src={IMAGES.mechanicPortrait}
               alt="Professional mechanic"
-              className="w-full aspect-square object-cover border border-white/10"
+              className="w-full aspect-[4/5] object-cover border border-white/5"
             />
-            <div className="absolute -bottom-4 -left-4 bg-neon-blue px-6 py-3">
-              <p className="font-heading text-sm tracking-widest uppercase text-white">ASE Certified</p>
+            <div className="absolute -bottom-6 -left-6 bg-brand-maroon px-8 py-4 shadow-maroon">
+              <p className="font-heading text-sm tracking-[0.15em] uppercase text-white">ASE Certified</p>
             </div>
+            {/* Decorative corner */}
+            <div className="absolute -top-3 -right-3 w-8 h-8 border-t-2 border-r-2 border-brand-gold" />
           </div>
         </div>
       </section>
 
       {/* Auto Repair Services */}
-      <section className="py-20 md:py-32 bg-slate-900/30" data-testid="auto-repair-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="py-24 lg:py-32 bg-brand-charcoal/30" data-testid="auto-repair-section">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* Section Header */}
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-14 h-14 bg-neon-blue flex items-center justify-center">
-              <Wrench className="w-7 h-7 text-white" />
+          <div className="flex items-center gap-5 mb-14">
+            <div className="w-16 h-16 bg-brand-maroon flex items-center justify-center">
+              <Wrench className="w-8 h-8 text-white" />
             </div>
             <div>
-              <span className="text-neon-blue font-heading text-sm tracking-widest uppercase block">Repair Services</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight uppercase text-white">
+              <span className="text-brand-maroon font-medium text-sm tracking-[0.2em] uppercase block">Repair Services</span>
+              <h2 className="font-heading text-3xl lg:text-4xl font-bold tracking-tight text-brand-cream">
                 Auto Repair
               </h2>
             </div>
@@ -72,16 +74,16 @@ const Services = () => {
       </section>
 
       {/* Car Wash Services */}
-      <section className="py-20 md:py-32" data-testid="car-wash-section">
-        <div className="max-w-7xl mx-auto px-6 md:px-12">
+      <section className="py-24 lg:py-32" data-testid="car-wash-section">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* Section Header */}
-          <div className="flex items-center gap-4 mb-12">
-            <div className="w-14 h-14 bg-neon-blue flex items-center justify-center">
-              <Droplets className="w-7 h-7 text-white" />
+          <div className="flex items-center gap-5 mb-14">
+            <div className="w-16 h-16 bg-brand-gold flex items-center justify-center">
+              <Droplets className="w-8 h-8 text-brand-dark" />
             </div>
             <div>
-              <span className="text-neon-blue font-heading text-sm tracking-widest uppercase block">Wash & Detail</span>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold tracking-tight uppercase text-white">
+              <span className="text-brand-gold font-medium text-sm tracking-[0.2em] uppercase block">Wash & Detail</span>
+              <h2 className="font-heading text-3xl lg:text-4xl font-bold tracking-tight text-brand-cream">
                 Car Wash
               </h2>
             </div>
@@ -97,24 +99,24 @@ const Services = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 md:py-32 bg-slate-900/50 border-y border-white/10" data-testid="services-cta">
-        <div className="max-w-4xl mx-auto px-6 md:px-12 text-center">
-          <span className="text-neon-red font-heading text-sm tracking-widest uppercase mb-2 block">Special Offer</span>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold tracking-tight uppercase text-white mb-6">
-            Get <span className="text-neon-red">{BUSINESS.promo}</span> Today
+      <section className="py-24 lg:py-32 bg-brand-charcoal/50 border-y border-white/5" data-testid="services-cta">
+        <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
+          <span className="text-brand-gold font-medium text-sm tracking-[0.2em] uppercase mb-3 block">Special Offer</span>
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-brand-cream mb-6">
+            Get <span className="text-brand-maroon">{BUSINESS.promo}</span> Today
           </h2>
-          <p className="text-slate-300 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-brand-cream/70 text-lg mb-10 max-w-2xl mx-auto">
             New customers receive 20% off any service. Call now to claim your discount or book an appointment online.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={BUSINESS.phoneLink}>
-              <Button size="lg" className="w-full sm:w-auto bg-neon-red hover:bg-neon-red/90 text-white font-heading tracking-wider uppercase px-8 transition-all hover:shadow-[0_0_20px_-5px_rgba(239,68,68,0.5)]">
+              <Button size="lg" className="w-full sm:w-auto bg-brand-maroon hover:bg-brand-maroon-light text-white font-medium tracking-wide px-10 transition-all duration-300 btn-premium">
                 <Phone className="w-5 h-5 mr-2" />
                 {BUSINESS.phone}
               </Button>
             </a>
             <Link to="/book">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/20 text-slate-300 hover:bg-neon-blue hover:text-white hover:border-neon-blue font-heading tracking-wider uppercase transition-all">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/10 text-brand-cream hover:bg-brand-gold hover:text-brand-dark hover:border-brand-gold font-medium tracking-wide transition-all duration-300">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Appointment
               </Button>
