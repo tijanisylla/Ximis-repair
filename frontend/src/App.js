@@ -1,6 +1,7 @@
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Toaster } from "sonner";
+import { ThemeProvider } from "./components/ThemeProvider";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { StickyCallButton } from "./components/layout/StickyCallButton";
@@ -15,33 +16,31 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <div className="App bg-brand-dark min-h-screen">
-      <BrowserRouter>
-        <Navbar />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/book" element={<BookAppointment />} />
-            <Route path="/specials" element={<Specials />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </main>
-        <Footer />
-        <StickyCallButton />
-        <LiveChatWidget />
-        <Toaster 
-          position="top-right"
-          toastOptions={{
-            style: {
-              background: '#1A1A1A',
-              color: '#F5F0E8',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-            },
-          }}
-        />
-      </BrowserRouter>
-    </div>
+    <ThemeProvider defaultTheme="dark" storageKey="ximi-theme">
+      <div className="App min-h-screen bg-background text-foreground">
+        <BrowserRouter>
+          <Navbar />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/book" element={<BookAppointment />} />
+              <Route path="/specials" element={<Specials />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </main>
+          <Footer />
+          <StickyCallButton />
+          <LiveChatWidget />
+          <Toaster 
+            position="top-right"
+            toastOptions={{
+              className: 'bg-card text-card-foreground border-border',
+            }}
+          />
+        </BrowserRouter>
+      </div>
+    </ThemeProvider>
   );
 }
 
