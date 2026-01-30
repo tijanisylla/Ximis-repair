@@ -15,7 +15,7 @@ import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <div className="App bg-midnight min-h-screen">
+    <div className="App bg-brand-dark min-h-screen">
       <BrowserRouter>
         <Navbar />
         <main>
@@ -34,8 +34,8 @@ function App() {
           position="top-right"
           toastOptions={{
             style: {
-              background: '#0F172A',
-              color: '#F8FAFC',
+              background: '#1A1A1A',
+              color: '#F5F0E8',
               border: '1px solid rgba(255, 255, 255, 0.1)',
             },
           }}
