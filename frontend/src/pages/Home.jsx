@@ -247,7 +247,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="text-center mb-16">
             <span className="text-brand-maroon font-medium text-sm tracking-[0.2em] uppercase mb-3 block">Our Work</span>
-            <h2 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-brand-cream">
+            <h2 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-foreground">
               Before & After
             </h2>
           </div>
@@ -256,7 +256,7 @@ const Home = () => {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-24 lg:py-32 bg-brand-charcoal/30" data-testid="reviews-section">
+      <section className="py-24 lg:py-32 bg-muted/30" data-testid="reviews-section">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 mb-12">
           <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-8">
             <div>
@@ -275,7 +275,7 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
             {/* Map */}
-            <div className="aspect-square lg:aspect-auto lg:min-h-[500px] bg-brand-charcoal border border-white/5 overflow-hidden">
+            <div className="aspect-square lg:aspect-auto lg:min-h-[500px] bg-card border border-border overflow-hidden">
               <iframe
                 src={BUSINESS.mapUrl}
                 width="100%"
@@ -292,7 +292,7 @@ const Home = () => {
             {/* Info */}
             <div className="flex flex-col justify-center">
               <span className="text-brand-maroon font-medium text-sm tracking-[0.2em] uppercase mb-3 block">Find Us</span>
-              <h2 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-brand-cream mb-10 line-accent">
+              <h2 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-10 line-accent">
                 Visit Our Shop
               </h2>
               
@@ -302,8 +302,8 @@ const Home = () => {
                     <MapPin className="w-6 h-6 text-brand-maroon" />
                   </div>
                   <div>
-                    <h4 className="font-heading text-lg font-semibold text-brand-cream">Address</h4>
-                    <p className="text-brand-cream/60 mt-1">{BUSINESS.address.full}</p>
+                    <h4 className="font-heading text-lg font-semibold text-foreground">Address</h4>
+                    <p className="text-muted-foreground mt-1">{BUSINESS.address.full}</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-5">
@@ -311,8 +311,8 @@ const Home = () => {
                     <Phone className="w-6 h-6 text-brand-maroon" />
                   </div>
                   <div>
-                    <h4 className="font-heading text-lg font-semibold text-brand-cream">Phone</h4>
-                    <a href={BUSINESS.phoneLink} className="text-brand-cream/60 hover:text-brand-gold transition-colors mt-1 block">
+                    <h4 className="font-heading text-lg font-semibold text-foreground">Phone</h4>
+                    <a href={BUSINESS.phoneLink} className="text-muted-foreground hover:text-brand-gold transition-colors mt-1 block">
                       {BUSINESS.phone}
                     </a>
                   </div>
@@ -322,8 +322,8 @@ const Home = () => {
                     <Clock className="w-6 h-6 text-brand-maroon" />
                   </div>
                   <div>
-                    <h4 className="font-heading text-lg font-semibold text-brand-cream">Hours</h4>
-                    <p className="text-brand-cream/60 mt-1">Open {BUSINESS.hours}</p>
+                    <h4 className="font-heading text-lg font-semibold text-foreground">Hours</h4>
+                    <p className="text-muted-foreground mt-1">Open {BUSINESS.hours}</p>
                   </div>
                 </div>
               </div>
