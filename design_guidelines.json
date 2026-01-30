@@ -1,0 +1,135 @@
+{
+  "design_system": {
+    "typography": {
+      "font_family": {
+        "heading": "Oswald, sans-serif",
+        "body": "Inter, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "scale": {
+        "h1": "text-6xl md:text-8xl font-bold tracking-tighter uppercase",
+        "h2": "text-4xl md:text-6xl font-bold tracking-tight uppercase",
+        "h3": "text-2xl md:text-3xl font-semibold tracking-tight uppercase",
+        "body": "text-base md:text-lg leading-relaxed text-slate-300",
+        "caption": "text-sm font-medium tracking-widest uppercase text-slate-500"
+      },
+      "imports": [
+        "@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;700&display=swap');"
+      ]
+    },
+    "colors": {
+      "palette": {
+        "background": "#020617",
+        "foreground": "#F8FAFC",
+        "primary": "#2563EB",
+        "primary_foreground": "#FFFFFF",
+        "secondary": "#1E293B",
+        "secondary_foreground": "#F8FAFC",
+        "accent": "#EF4444",
+        "accent_foreground": "#FFFFFF",
+        "muted": "#0F172A",
+        "muted_foreground": "#94A3B8",
+        "border": "#1E293B",
+        "input": "#1E293B",
+        "ring": "#2563EB"
+      },
+      "tailwind_config_extension": {
+        "colors": {
+          "midnight": "#020617",
+          "slate": {
+            "850": "#172033",
+            "900": "#0F172A",
+            "950": "#020617"
+          },
+          "neon-blue": "#2563EB",
+          "neon-red": "#EF4444"
+        },
+        "backgroundImage": {
+          "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+          "hero-glow": "conic-gradient(from 180deg at 50% 50%, #2563EB 0deg, #020617 180deg, #2563EB 360deg)"
+        }
+      }
+    },
+    "spacing": {
+      "container_padding": "px-6 md:px-12 lg:px-24",
+      "section_spacing": "py-20 md:py-32",
+      "element_spacing": "gap-6 md:gap-12"
+    },
+    "visual_enhancers": {
+      "radius": "0px",
+      "shadows": {
+        "neon": "0 0 20px -5px rgba(37, 99, 235, 0.5)",
+        "card": "0 1px 3px 0 rgba(0, 0, 0, 0.5), 0 1px 2px -1px rgba(0, 0, 0, 0.5)"
+      },
+      "borders": "1px solid rgba(255, 255, 255, 0.1)",
+      "glassmorphism": "backdrop-blur-xl bg-slate-950/70 border border-white/10"
+    }
+  },
+  "assets": {
+    "images": {
+      "hero_bg": "https://images.unsplash.com/photo-1756575527484-2839c593ed84?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwyfHxtZWNoYW5pYyUyMHdvcmtpbmclMjBvbiUyMGNhciUyMGRhcmslMjBtb29keXxlbnwwfHx8fDE3Njk3NTYzNDF8MA&ixlib=rb-4.1.0&q=85",
+      "chicago_skyline": "https://images.unsplash.com/photo-1599931088219-645e4174a4ea?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzd8MHwxfHNlYXJjaHwyfHxjaGljYWdvJTIwc2t5bGluZSUyMG5pZ2h0JTIwY2l0eSUyMGxpZ2h0c3xlbnwwfHx8fDE3Njk3NTYzNjB8MA&ixlib=rb-4.1.0&q=85",
+      "mechanic_portrait": "https://images.unsplash.com/photo-1461938337379-4b537cd2db74?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwzfHxmcmllbmRseSUyMG1lY2hhbmljJTIwaG9sZGluZyUyMHdyZW5jaCUyMHBvcnRyYWl0fGVufDB8fHx8MTc2OTc1NjM3MXww&ixlib=rb-4.1.0&q=85",
+      "service_repair": "https://images.unsplash.com/photo-1549047608-55b2fd4b8427?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwyfHxtb2Rlcm4lMjBhdXRvJTIwcmVwYWlyJTIwc2hvcCUyMGludGVyaW9yJTIwbmlnaHR8ZW58MHx8fHwxNzY5NzU2MzQ1fDA&ixlib=rb-4.1.0&q=85",
+      "service_wash": "https://images.pexels.com/photos/6872609/pexels-photo-6872609.jpeg",
+      "gallery_before": "https://images.unsplash.com/photo-1756364897783-160a04249b99?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA3MDB8MHwxfHNlYXJjaHwxfHxkaXJ0eSUyMG11ZGR5JTIwY2FyJTIwZXh0ZXJpb3J8ZW58MHx8fHwxNzY5NzU2MzYzfDA&ixlib=rb-4.1.0&q=85",
+      "gallery_after": "https://images.unsplash.com/photo-1761119278824-bcb65edd36ca?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NDh8MHwxfHNlYXJjaHwyfHxzaGlueSUyMGNsZWFuJTIwbHV4dXJ5JTIwY2FyJTIwZXh0ZXJpb3IlMjBzdHVkaW98ZW58MHx8fHwxNzY5NzU2MzY5fDA&ixlib=rb-4.1.0&q=85"
+    },
+    "icons": "lucide-react"
+  },
+  "layout_strategy": {
+    "grid_system": "Bento Grid (Mode A: Tetris)",
+    "container_width": "max-w-7xl mx-auto",
+    "mobile_first": "Stack vertically on mobile, expand to grid on md/lg screens"
+  },
+  "components": {
+    "hero": {
+      "style": "Split screen with diagonal clip-path or overlay",
+      "elements": ["H1 Headline", "24/7 Badge (Pulsing)", "Primary CTA (Book Now)", "Secondary CTA (Call Us)", "Trust Indicators"]
+    },
+    "services": {
+      "style": "Bento Grid Cards",
+      "interaction": "Hover: Border glow + slight scale up"
+    },
+    "booking_form": {
+      "style": "Tactical/Industrial",
+      "elements": ["Input fields with high contrast borders", "Urgency indicator", "Success message toast"]
+    },
+    "testimonials": {
+      "style": "Infinite Marquee or Carousel",
+      "content": "Star ratings + User photos"
+    }
+  },
+  "animations": {
+    "library": "framer-motion",
+    "scroll": "lenis",
+    "types": {
+      "fade_up": {
+        "initial": { "opacity": 0, "y": 20 },
+        "whileInView": { "opacity": 1, "y": 0 },
+        "viewport": { "once": true }
+      },
+      "hover_glow": {
+        "whileHover": { "boxShadow": "0 0 20px -5px rgba(37, 99, 235, 0.5)", "borderColor": "#2563EB" }
+      }
+    }
+  },
+  "instructions_to_main_agent": [
+    "Implement the 'Midnight Mechanic' theme strictly. No grey backgrounds, use deep slate/obsidian.",
+    "Use 'Oswald' font for all headings to give that industrial/garage look.",
+    "Ensure the '20% OFF' promo is visible in the Hero section.",
+    "The 'Book Appointment' form must be functional (store in local state) and show a success toast.",
+    "Use the provided image URLs for specific sections. Do not use placeholders.",
+    "Add a 'sticky' call button on mobile view for easy access.",
+    "Integrate the Chicago skyline image in the footer or contact section background to ground the location.",
+    "Use 'sonner' for all toast notifications.",
+    "Ensure all interactive elements have data-testid attributes."
+  ],
+  "universal_guidelines": [
+    "Avoid generic 'SaaS Blue' gradients. Use sharp, high-contrast colors.",
+    "Do not center-align everything. Use asymmetry for visual interest.",
+    "Use 2-3x more spacing than usual. Let the design breathe.",
+    "Micro-animations on every interaction (hover, focus, click).",
+    "Dark mode is the default and only mode for this brand."
+  ]
+}
