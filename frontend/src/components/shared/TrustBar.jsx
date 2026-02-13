@@ -1,11 +1,12 @@
-import { Award, Clock, Shield, MapPin } from 'lucide-react';
+import { Award, Clock, Shield, MapPin, FileCheck } from 'lucide-react';
 import { TRUST_INDICATORS } from '../../data/business';
 
 const iconMap = {
   Award,
   Clock,
   Shield,
-  MapPin
+  MapPin,
+  FileCheck
 };
 
 export const TrustBar = () => {

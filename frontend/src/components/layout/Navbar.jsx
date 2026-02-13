@@ -2,19 +2,18 @@ import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Phone, Menu, X, Sun, Moon } from 'lucide-react';
 import { Button } from '../ui/button';
+import LogoImg from '@/assets/ximis_no-bg-LOGO.png';
 import { useTheme } from '../ThemeProvider';
 import { BUSINESS } from '../../data/business';
 
-// Car silhouette SVG component matching the logo
+// Actual logo image – same max size as original SVG so navbar doesn't change
 const CarLogo = ({ className = "" }) => (
-  <svg viewBox="0 0 120 40" className={className} fill="currentColor">
-    <path d="M10,30 Q5,30 5,25 L5,22 Q5,20 8,18 L25,15 Q35,12 50,12 L80,12 Q95,12 105,18 L112,22 Q115,24 115,26 L115,30 Q115,32 110,32 L100,32 Q98,32 96,30 Q94,28 90,28 Q86,28 84,30 Q82,32 80,32 L40,32 Q38,32 36,30 Q34,28 30,28 Q26,28 24,30 Q22,32 20,32 L10,32 Q5,32 5,30 Z" 
-          stroke="currentColor" 
-          strokeWidth="2" 
-          fill="none"/>
-    <circle cx="30" cy="30" r="6" fill="currentColor" opacity="0.3"/>
-    <circle cx="90" cy="30" r="6" fill="currentColor" opacity="0.3"/>
-  </svg>
+  <img
+    src={LogoImg}
+    alt="XIMI'S Auto Repair"
+    className={className}
+    loading="eager"
+  />
 );
 
 export const Navbar = () => {
@@ -71,12 +70,12 @@ export const Navbar = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <Link 
-              to="/" 
+              to="/"
               className="flex items-center gap-3 group"
               data-testid="navbar-logo"
             >
-              <div className="relative">
-                <CarLogo className="w-16 h-12 text-brand-maroon group-hover:text-brand-gold transition-colors duration-300" />
+              <div className="relative h-12 w-16 flex items-center shrink-0">
+                <CarLogo className="max-h-100 w-auto object-contain object-left" />
               </div>
               <div className="hidden sm:block">
                 <h1 className="font-heading text-xl font-bold tracking-tight text-foreground leading-none">

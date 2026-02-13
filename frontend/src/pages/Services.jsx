@@ -6,17 +6,17 @@ import { BUSINESS, AUTO_REPAIR_SERVICES, CAR_WASH_SERVICES, IMAGES } from '../da
 
 const Services = () => {
   return (
-    <div className="min-h-screen bg-brand-dark pt-36 lg:pt-44" data-testid="services-page">
+    <div className="min-h-screen bg-background pt-36 lg:pt-44" data-testid="services-page">
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-6 lg:px-12 mb-24">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div>
             <span className="text-brand-maroon font-medium text-sm tracking-[0.2em] uppercase mb-3 block">Our Services</span>
-            <h1 className="font-heading text-4xl lg:text-6xl font-bold tracking-tight text-brand-cream mb-6 line-accent">
+            <h1 className="font-heading text-4xl lg:text-6xl font-bold tracking-tight text-foreground mb-6 line-accent">
               Complete Auto Care
             </h1>
-            <p className="text-brand-cream/70 text-lg leading-relaxed mb-10">
-              From routine maintenance to major repairs, our ASE-certified technicians handle it all with precision and care. Plus premium car wash and detailing services to keep your vehicle looking showroom fresh.
+            <p className="text-muted-foreground text-lg leading-relaxed mb-10">
+              From routine maintenance to major repairs, our ASE-certified technicians handle it all with precision and care. {BUSINESS.tagline}. Plus premium car wash and detailing services to keep your vehicle looking showroom fresh.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a href={BUSINESS.phoneLink}>
@@ -26,7 +26,7 @@ const Services = () => {
                 </Button>
               </a>
               <Link to="/book">
-                <Button variant="outline" className="w-full sm:w-auto border-white/10 text-brand-cream/80 hover:bg-white/5 font-medium tracking-wide transition-all duration-300">
+                <Button variant="outline" className="w-full sm:w-auto border-border text-foreground hover:bg-muted font-medium tracking-wide transition-all duration-300">
                   <Calendar className="w-4 h-4 mr-2" />
                   Book Online
                 </Button>
@@ -37,7 +37,7 @@ const Services = () => {
             <img 
               src={IMAGES.mechanicPortrait}
               alt="Professional mechanic"
-              className="w-full aspect-[4/5] object-cover border border-white/5"
+              className="w-full aspect-[4/5] object-cover border border-border"
             />
             <div className="absolute -bottom-6 -left-6 bg-brand-maroon px-8 py-4 shadow-maroon">
               <p className="font-heading text-sm tracking-[0.15em] uppercase text-white">ASE Certified</p>
@@ -49,7 +49,7 @@ const Services = () => {
       </section>
 
       {/* Auto Repair Services */}
-      <section className="py-24 lg:py-32 bg-brand-charcoal/30" data-testid="auto-repair-section">
+      <section className="py-24 lg:py-32 bg-muted/30" data-testid="auto-repair-section">
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           {/* Section Header */}
           <div className="flex items-center gap-5 mb-14">
@@ -58,7 +58,7 @@ const Services = () => {
             </div>
             <div>
               <span className="text-brand-maroon font-medium text-sm tracking-[0.2em] uppercase block">Repair Services</span>
-              <h2 className="font-heading text-3xl lg:text-4xl font-bold tracking-tight text-brand-cream">
+              <h2 className="font-heading text-3xl lg:text-4xl font-bold tracking-tight text-foreground">
                 Auto Repair
               </h2>
             </div>
@@ -83,7 +83,7 @@ const Services = () => {
             </div>
             <div>
               <span className="text-brand-gold font-medium text-sm tracking-[0.2em] uppercase block">Wash & Detail</span>
-              <h2 className="font-heading text-3xl lg:text-4xl font-bold tracking-tight text-brand-cream">
+              <h2 className="font-heading text-3xl lg:text-4xl font-bold tracking-tight text-foreground">
                 Car Wash
               </h2>
             </div>
@@ -99,13 +99,13 @@ const Services = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 lg:py-32 bg-brand-charcoal/50 border-y border-white/5" data-testid="services-cta">
+      <section className="py-24 lg:py-32 bg-muted/50 border-y border-border" data-testid="services-cta">
         <div className="max-w-4xl mx-auto px-6 lg:px-12 text-center">
           <span className="text-brand-gold font-medium text-sm tracking-[0.2em] uppercase mb-3 block">Special Offer</span>
-          <h2 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-brand-cream mb-6">
+          <h2 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">
             Get <span className="text-brand-maroon">{BUSINESS.promo}</span> Today
           </h2>
-          <p className="text-brand-cream/70 text-lg mb-10 max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg mb-10 max-w-2xl mx-auto">
             New customers receive 20% off any service. Call now to claim your discount or book an appointment online.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -116,7 +116,7 @@ const Services = () => {
               </Button>
             </a>
             <Link to="/book">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto border-white/10 text-brand-cream hover:bg-brand-gold hover:text-brand-dark hover:border-brand-gold font-medium tracking-wide transition-all duration-300">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto border-border text-foreground hover:bg-brand-gold hover:text-brand-dark hover:border-brand-gold font-medium tracking-wide transition-all duration-300">
                 <Calendar className="w-5 h-5 mr-2" />
                 Book Appointment
               </Button>

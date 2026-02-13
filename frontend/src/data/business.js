@@ -3,6 +3,7 @@ export const BUSINESS = {
   name: "XIMI'S AUTO REPAIR",
   phone: "(312) 533-6377",
   phoneLink: "tel:+13125336377",
+  tagline: "The lowest rate in the Chicago area",
   address: {
     street: "3633 N Cicero Ave",
     city: "Chicago",
@@ -21,21 +22,24 @@ export const BUSINESS = {
 export const TRUST_INDICATORS = [
   { icon: "Award", text: "ASE Certified", description: "Factory trained technicians" },
   { icon: "Clock", text: "24/7 Service", description: "Always here when you need us" },
-  { icon: "Shield", text: "Honest Pricing", description: "No hidden fees, ever" },
-  { icon: "MapPin", text: "Local Chicago", description: "Serving the community since day one" }
+  { icon: "Shield", text: "Lowest Rates in Chicago", description: "The lowest rate in the Chicago area" },
+  { icon: "FileCheck", text: "Free Estimate & Diagnostic", description: "No cost to get a quote or check engine light" }
 ];
 
 // Auto Repair Services
 export const AUTO_REPAIR_SERVICES = [
-  { id: 1, name: "Diagnostics", description: "State-of-the-art computer diagnostics to pinpoint issues with precision", icon: "Search", featured: true },
-  { id: 2, name: "Brake Service", description: "Complete brake system inspection, repair, and replacement", icon: "Disc", featured: true },
-  { id: 3, name: "Oil Change", description: "Premium synthetic and conventional oil change service", icon: "Droplet", featured: true },
-  { id: 4, name: "Engine Repair", description: "Expert engine diagnostics, repair, and complete rebuilds", icon: "Cog", featured: false },
-  { id: 5, name: "Transmission", description: "Transmission repair, rebuild, and fluid service", icon: "Settings", featured: false },
-  { id: 6, name: "Suspension", description: "Shocks, struts, and complete suspension restoration", icon: "ArrowDownUp", featured: false },
-  { id: 7, name: "Battery Service", description: "Testing, charging, and battery replacement", icon: "Battery", featured: false },
-  { id: 8, name: "Tire Service", description: "Rotation, balancing, alignment, and new tires", icon: "Circle", featured: false },
-  { id: 9, name: "AC & Heating", description: "Climate control system repair and recharge", icon: "Thermometer", featured: false }
+  { id: 1, name: "Mechanical Work", description: "Complete mechanical repairs and maintenance for all makes and models", icon: "Wrench", featured: true },
+  { id: 2, name: "Brakes", description: "Full brake system inspection, repair, and replacement", icon: "Disc", featured: true },
+  { id: 3, name: "Front Suspension", description: "Struts, shocks, lower & upper control arms, ball joints, and wheel bearings", icon: "ArrowDownUp", featured: true },
+  { id: 4, name: "Tires", description: "Tire rotation, mount & balance, flat tire repair, and tire replacement", icon: "Circle", featured: false },
+  { id: 5, name: "Oil & Fluids", description: "Oil change, fluid check, top off, and coolant flush", icon: "Droplet", featured: false },
+  { id: 6, name: "Tune Up", description: "Complete tune-up services to keep your engine running smoothly", icon: "Cog", featured: false },
+  { id: 7, name: "Transmission", description: "Transmission services, repair, and full replacement", icon: "Settings", featured: false },
+  { id: 8, name: "Engine", description: "Engine repair and complete engine replacement", icon: "Cog", featured: false },
+  { id: 9, name: "Radiator", description: "Radiator replacement and cooling system services", icon: "Thermometer", featured: false },
+  { id: 10, name: "AC & Heating", description: "Air conditioning repair, Freon refill, blower motors, and heating", icon: "Thermometer", featured: false },
+  { id: 11, name: "Diagnostics", description: "Free diagnostic and check engine light scan", icon: "Search", featured: false },
+  { id: 12, name: "Roadside Assistance", description: "Flat tire repair and emergency roadside assistance", icon: "Car", featured: false }
 ];
 
 // Car Wash Services
@@ -100,15 +104,36 @@ export const REVIEWS = [
 
 // Service Types for Booking Form
 export const SERVICE_TYPES = [
-  "Diagnostics",
-  "Brake Service",
+  "Mechanical Work",
+  "Brakes",
+  "Front Suspension",
+  "Struts",
+  "Shocks",
+  "Lower Control Arms",
+  "Upper Control Arms",
+  "Ball Joints",
+  "Wheel Bearing",
+  "Tires",
+  "Tire Rotation",
+  "Tire Mount & Balance",
   "Oil Change",
-  "Engine Repair",
+  "Check Fluids / Top Off Fluids",
+  "Tune Up",
   "Transmission Service",
-  "Suspension Work",
-  "Battery Service",
-  "Tire Service",
-  "AC/Heat Repair",
+  "Transmission Replacement",
+  "Engine Replacement",
+  "Radiator Replacement",
+  "Coolant Flush",
+  "Air Conditioning Repair",
+  "Air Conditioning Freon Refill",
+  "Blower Motors",
+  "Heating",
+  "Flat Tire Repair",
+  "Tire Replacement",
+  "Roadside Assistance",
+  "Free Estimate",
+  "Free Diagnostic",
+  "Check Engine Light",
   "Exterior Car Wash",
   "Interior Cleaning",
   "Full Detailing",

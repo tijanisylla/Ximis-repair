@@ -6,6 +6,7 @@ import { ServiceCard } from '../components/shared/ServiceCard';
 import { TestimonialCarousel } from '../components/shared/TestimonialCarousel';
 import { BeforeAfterGallery } from '../components/shared/BeforeAfterGallery';
 import { BUSINESS, AUTO_REPAIR_SERVICES, CAR_WASH_SERVICES, IMAGES } from '../data/business';
+import OwnerImg from '../assets/Owner.jpg';
 
 // Car silhouette SVG component
 const CarSilhouette = ({ className = "" }) => (
@@ -44,7 +45,7 @@ const Home = () => {
             {/* Badge */}
             <div className="inline-flex items-center gap-3 bg-brand-maroon/20 border border-brand-maroon/30 px-5 py-2.5 mb-8 opacity-0 animate-fade-up">
               <span className="w-2 h-2 bg-brand-gold rounded-full animate-pulse" />
-              <span className="text-sm font-medium tracking-wide text-brand-cream">Open 24/7 - Always Here For You</span>
+              <span className="text-sm font-medium tracking-wide text-foreground">Open 24/7 - Always Here For You</span>
             </div>
 
             {/* Headline */}
@@ -55,7 +56,7 @@ const Home = () => {
 
             {/* Subheadline */}
             <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-8 max-w-xl opacity-0 animate-fade-up animation-delay-200">
-              Chicago's trusted destination for professional auto repair and premium car wash services. Quality craftsmanship, honest pricing.
+              Chicago's trusted destination for professional auto repair and premium car wash services. {BUSINESS.tagline}.
             </p>
 
             {/* Promo Badge */}
@@ -95,7 +96,7 @@ const Home = () => {
         </div>
 
         {/* Scroll Indicator */}
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in animation-delay-600">
+        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-fade-in animation-delay-600">
           <span className="text-xs tracking-[0.2em] uppercase text-muted-foreground">Scroll</span>
           <ChevronDown className="w-5 h-5 text-muted-foreground animate-bounce" />
         </div>
@@ -103,6 +104,33 @@ const Home = () => {
 
       {/* Trust Bar */}
       <TrustBar />
+
+      {/* Meet the Owner */}
+      <section className="py-24 lg:py-32 bg-muted/30" data-testid="meet-owner-section">
+        <div className="max-w-7xl mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="relative overflow-hidden border border-border bg-card shadow-lg">
+              <img
+                src={OwnerImg}
+                alt="Owner of XIMI'S Auto Repair with classic car and motorcycle in the shop"
+                className="w-full h-auto object-cover"
+              />
+            </div>
+            <div className="flex flex-col justify-center">
+              <span className="text-brand-maroon font-medium text-sm tracking-[0.2em] uppercase mb-3 block">Our Story</span>
+              <h2 className="font-heading text-4xl lg:text-5xl font-bold tracking-tight text-foreground mb-6 line-accent">
+                Meet the Owner
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                Family-owned and operated, XIMI'S is where classic meets modern. From vintage restorations to everyday repairs and premium car wash, we treat every vehicle—and every customer—like our own.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                When you call or stop by, you're talking to people who care. Honest pricing, no hidden fees, and 24/7 service because your time matters.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Services Preview */}
       <section className="py-24 lg:py-32" data-testid="services-preview">
@@ -143,7 +171,7 @@ const Home = () => {
                   Complete auto repair services from diagnostics to engine rebuilds. ASE-certified mechanics available 24/7 for all your automotive needs.
                 </p>
                 <Link to="/services">
-                  <Button className="bg-white/10 backdrop-blur border border-white/20 text-white hover:bg-brand-maroon hover:border-brand-maroon font-medium tracking-wide transition-all duration-300 group-hover:shadow-maroon">
+                  <Button className="bg-background/95 border border-border text-foreground dark:bg-white/10 dark:backdrop-blur dark:border-white/20 dark:text-white hover:bg-brand-maroon hover:text-white hover:border-brand-maroon font-medium tracking-wide transition-all duration-300 group-hover:shadow-maroon">
                     Explore Services
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
@@ -169,7 +197,7 @@ const Home = () => {
                   Premium hand wash and detailing services. From quick exterior washes to complete interior restoration and ceramic coating.
                 </p>
                 <Link to="/services">
-                  <Button className="bg-white/10 backdrop-blur border border-white/20 text-white hover:bg-brand-gold hover:text-brand-dark hover:border-brand-gold font-medium tracking-wide transition-all duration-300">
+                  <Button className="bg-background/95 border border-border text-foreground dark:bg-white/10 dark:backdrop-blur dark:border-white/20 dark:text-white hover:bg-brand-gold hover:text-brand-dark hover:border-brand-gold font-medium tracking-wide transition-all duration-300">
                     Explore Services
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
@@ -354,7 +382,7 @@ const Home = () => {
             Ready to Get Started?
           </h2>
           <p className="text-white/80 text-lg mb-10 max-w-2xl mx-auto">
-            Call us now for a free estimate or book an appointment online. We're here 24/7 to help with all your automotive needs.
+            Call us now for a free estimate or book an appointment online. {BUSINESS.tagline}. We're here 24/7 to help with all your automotive needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={BUSINESS.phoneLink}>

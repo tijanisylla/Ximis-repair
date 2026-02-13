@@ -1,17 +1,16 @@
 import { Link } from 'react-router-dom';
 import { Phone, MapPin, Clock, Instagram, ArrowUpRight } from 'lucide-react';
 import { BUSINESS, IMAGES } from '../../data/business';
+import Logo from '@/assets/ximis_no-bg-LOGO.png';
 
-// Car silhouette SVG component
+// Branded logo image component
 const CarLogo = ({ className = "" }) => (
-  <svg viewBox="0 0 120 40" className={className} fill="currentColor">
-    <path d="M10,30 Q5,30 5,25 L5,22 Q5,20 8,18 L25,15 Q35,12 50,12 L80,12 Q95,12 105,18 L112,22 Q115,24 115,26 L115,30 Q115,32 110,32 L100,32 Q98,32 96,30 Q94,28 90,28 Q86,28 84,30 Q82,32 80,32 L40,32 Q38,32 36,30 Q34,28 30,28 Q26,28 24,30 Q22,32 20,32 L10,32 Q5,32 5,30 Z" 
-          stroke="currentColor" 
-          strokeWidth="2" 
-          fill="none"/>
-    <circle cx="30" cy="30" r="6" fill="currentColor" opacity="0.3"/>
-    <circle cx="90" cy="30" r="6" fill="currentColor" opacity="0.3"/>
-  </svg>
+  <img
+    src={Logo}
+    className={className}
+    alt="XIMI'S Auto Repair logo"
+    loading="lazy"
+  />
 );
 
 export const Footer = () => {
@@ -19,19 +18,19 @@ export const Footer = () => {
 
   return (
     <footer 
-      className="relative bg-brand-dark border-t border-white/5"
+      className="relative bg-background border-t border-border"
       data-testid="footer"
     >
       {/* Background Pattern */}
       <div 
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-5 dark:opacity-3"
         style={{
           backgroundImage: `url(${IMAGES.chicagoSkyline})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center top'
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-dark via-brand-dark/98 to-brand-dark" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background via-background/98 to-background" />
 
       <div className="relative z-10">
         {/* Main Footer Content */}
@@ -40,20 +39,20 @@ export const Footer = () => {
             {/* Brand Column */}
             <div className="lg:col-span-1 space-y-6">
               <div className="flex items-center gap-3">
-                <CarLogo className="w-20 h-14 text-brand-maroon" />
+                <CarLogo className="w-[100px] h-auto object-contain" />
                 <div>
-                  <h3 className="font-heading text-2xl font-bold tracking-tight text-brand-cream">XIMI'S</h3>
+                  <h3 className="font-heading text-2xl font-bold tracking-tight text-foreground">XIMI'S</h3>
                   <p className="text-[10px] text-brand-gold tracking-[0.3em] uppercase font-medium">Auto Repair</p>
                 </div>
               </div>
-              <p className="text-brand-cream/60 text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed">
                 Chicago's trusted destination for professional auto repair and premium car wash services since day one.
               </p>
               <a 
                 href={BUSINESS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-brand-cream/60 hover:text-brand-gold transition-colors group"
+                className="inline-flex items-center gap-2 text-muted-foreground hover:text-brand-gold transition-colors group"
                 data-testid="footer-instagram"
               >
                 <Instagram className="w-5 h-5" />
@@ -64,7 +63,7 @@ export const Footer = () => {
 
             {/* Contact Column */}
             <div className="space-y-6">
-              <h4 className="font-heading text-lg font-semibold tracking-wide text-brand-cream">Contact</h4>
+              <h4 className="font-heading text-lg font-semibold tracking-wide text-foreground">Contact</h4>
               <div className="space-y-5">
                 <a 
                   href={BUSINESS.phoneLink}
@@ -75,8 +74,8 @@ export const Footer = () => {
                     <Phone className="w-4 h-4 text-brand-maroon" />
                   </div>
                   <div>
-                    <p className="text-brand-cream font-medium group-hover:text-brand-gold transition-colors">{BUSINESS.phone}</p>
-                    <p className="text-brand-cream/50 text-xs mt-0.5">Available 24/7</p>
+                    <p className="text-foreground font-medium group-hover:text-brand-gold transition-colors">{BUSINESS.phone}</p>
+                    <p className="text-muted-foreground text-xs mt-0.5">Available 24/7</p>
                   </div>
                 </a>
                 <a 
@@ -90,8 +89,8 @@ export const Footer = () => {
                     <MapPin className="w-4 h-4 text-brand-maroon" />
                   </div>
                   <div>
-                    <p className="text-brand-cream font-medium group-hover:text-brand-gold transition-colors">{BUSINESS.address.street}</p>
-                    <p className="text-brand-cream/50 text-xs mt-0.5">{BUSINESS.address.city}, {BUSINESS.address.state} {BUSINESS.address.zip}</p>
+                    <p className="text-foreground font-medium group-hover:text-brand-gold transition-colors">{BUSINESS.address.street}</p>
+                    <p className="text-muted-foreground text-xs mt-0.5">{BUSINESS.address.city}, {BUSINESS.address.state} {BUSINESS.address.zip}</p>
                   </div>
                 </a>
                 <div className="flex items-start gap-4">
@@ -99,8 +98,8 @@ export const Footer = () => {
                     <Clock className="w-4 h-4 text-brand-maroon" />
                   </div>
                   <div>
-                    <p className="text-brand-cream font-medium">Open {BUSINESS.hours}</p>
-                    <p className="text-brand-cream/50 text-xs mt-0.5">Always Available</p>
+                    <p className="text-foreground font-medium">Open {BUSINESS.hours}</p>
+                    <p className="text-muted-foreground text-xs mt-0.5">Always Available</p>
                   </div>
                 </div>
               </div>
@@ -108,13 +107,13 @@ export const Footer = () => {
 
             {/* Services Column */}
             <div className="space-y-6">
-              <h4 className="font-heading text-lg font-semibold tracking-wide text-brand-cream">Services</h4>
+              <h4 className="font-heading text-lg font-semibold tracking-wide text-foreground">Services</h4>
               <ul className="space-y-3">
                 {['Diagnostics', 'Brake Service', 'Oil Change', 'Engine Repair', 'Car Wash', 'Full Detailing'].map((service) => (
                   <li key={service}>
                     <Link 
                       to="/services"
-                      className="text-brand-cream/60 hover:text-brand-gold transition-colors text-sm inline-flex items-center gap-1 group"
+                      className="text-muted-foreground hover:text-brand-gold transition-colors text-sm inline-flex items-center gap-1 group"
                     >
                       <span className="w-1 h-1 bg-brand-maroon rounded-full group-hover:w-2 transition-all" />
                       <span className="ml-2">{service}</span>
@@ -126,19 +125,20 @@ export const Footer = () => {
 
             {/* Quick Links Column */}
             <div className="space-y-6">
-              <h4 className="font-heading text-lg font-semibold tracking-wide text-brand-cream">Quick Links</h4>
+              <h4 className="font-heading text-lg font-semibold tracking-wide text-foreground">Quick Links</h4>
               <ul className="space-y-3">
                 {[
                   { to: '/', label: 'Home' },
                   { to: '/services', label: 'All Services' },
                   { to: '/specials', label: 'Current Specials' },
                   { to: '/book', label: 'Book Appointment' },
-                  { to: '/contact', label: 'Contact & Location' }
+                  { to: '/contact', label: 'Contact & Location' },
+                  { to: '/admin', label: 'Admin' }
                 ].map((link) => (
                   <li key={link.to}>
                     <Link 
                       to={link.to}
-                      className="text-brand-cream/60 hover:text-brand-gold transition-colors text-sm inline-flex items-center gap-1 group"
+                      className="text-muted-foreground hover:text-brand-gold transition-colors text-sm inline-flex items-center gap-1 group"
                     >
                       <span className="w-1 h-1 bg-brand-maroon rounded-full group-hover:w-2 transition-all" />
                       <span className="ml-2">{link.label}</span>
@@ -150,7 +150,7 @@ export const Footer = () => {
                     href={BUSINESS.directionsUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-brand-cream/60 hover:text-brand-gold transition-colors text-sm inline-flex items-center gap-2 group"
+                    className="text-muted-foreground hover:text-brand-gold transition-colors text-sm inline-flex items-center gap-2 group"
                   >
                     <span className="w-1 h-1 bg-brand-maroon rounded-full group-hover:w-2 transition-all" />
                     <span className="ml-2">Get Directions</span>
@@ -163,13 +163,13 @@ export const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/5">
+        <div className="border-t border-border">
           <div className="max-w-7xl mx-auto px-6 lg:px-12 py-6">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-brand-cream/40 text-sm">
+              <p className="text-muted-foreground/60 text-sm">
                 &copy; {currentYear} {BUSINESS.name}. All rights reserved.
               </p>
-              <p className="text-brand-cream/40 text-sm text-center md:text-right">
+              <p className="text-muted-foreground/60 text-sm text-center md:text-right">
                 {BUSINESS.address.full} <span className="text-brand-maroon mx-2">|</span> {BUSINESS.phone}
               </p>
             </div>

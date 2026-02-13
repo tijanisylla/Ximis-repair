@@ -21,7 +21,7 @@ export const BeforeAfterGallery = () => {
   return (
     <div className="relative" data-testid="before-after-gallery">
       {/* Main Image Container */}
-      <div className="relative aspect-[16/10] lg:aspect-[21/9] bg-brand-charcoal overflow-hidden border border-white/5">
+      <div className="relative aspect-[16/10] lg:aspect-[21/9] bg-card overflow-hidden border border-border">
         {/* Before Image */}
         <img
           src={currentItem.before}
@@ -42,7 +42,7 @@ export const BeforeAfterGallery = () => {
 
         {/* Label Badge */}
         <div className={`absolute top-6 left-6 px-5 py-2.5 font-heading text-sm tracking-wider transition-all duration-300 ${
-          showAfter ? 'bg-brand-gold text-brand-dark' : 'bg-brand-charcoal/90 text-brand-cream border border-white/10'
+          showAfter ? 'bg-brand-gold text-brand-dark' : 'bg-card/90 backdrop-blur text-foreground border border-border'
         }`}>
           {showAfter ? 'AFTER' : 'BEFORE'}
         </div>
@@ -50,7 +50,7 @@ export const BeforeAfterGallery = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-brand-dark/80 backdrop-blur border border-white/10 flex items-center justify-center text-brand-cream hover:bg-brand-maroon hover:border-brand-maroon transition-all duration-300"
+          className="absolute left-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/80 backdrop-blur border border-border flex items-center justify-center text-foreground hover:bg-brand-maroon hover:text-white hover:border-brand-maroon transition-all duration-300"
           aria-label="Previous"
           data-testid="gallery-prev"
         >
@@ -58,7 +58,7 @@ export const BeforeAfterGallery = () => {
         </button>
         <button
           onClick={nextSlide}
-          className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-brand-dark/80 backdrop-blur border border-white/10 flex items-center justify-center text-brand-cream hover:bg-brand-maroon hover:border-brand-maroon transition-all duration-300"
+          className="absolute right-6 top-1/2 -translate-y-1/2 w-12 h-12 bg-background/80 backdrop-blur border border-border flex items-center justify-center text-foreground hover:bg-brand-maroon hover:text-white hover:border-brand-maroon transition-all duration-300"
           aria-label="Next"
           data-testid="gallery-next"
         >
@@ -66,26 +66,26 @@ export const BeforeAfterGallery = () => {
         </button>
 
         {/* Bottom Gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-brand-dark to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       </div>
 
       {/* Info & Toggle */}
       <div className="mt-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
         <div>
-          <h3 className="font-heading text-2xl font-semibold tracking-wide text-brand-cream">
+          <h3 className="font-heading text-2xl font-semibold tracking-wide text-foreground">
             {currentItem.title}
           </h3>
-          <p className="text-brand-cream/60 mt-1">{currentItem.description}</p>
+          <p className="text-muted-foreground mt-1">{currentItem.description}</p>
         </div>
         <div className="flex items-center gap-4">
           {/* Toggle Buttons */}
-          <div className="flex border border-white/10 overflow-hidden">
+          <div className="flex border border-border overflow-hidden">
             <button
               onClick={() => setShowAfter(false)}
               className={`px-6 py-3 font-medium text-sm tracking-wide transition-all duration-300 ${
                 !showAfter 
                   ? 'bg-brand-maroon text-white' 
-                  : 'bg-transparent text-brand-cream/60 hover:text-brand-cream hover:bg-white/5'
+                  : 'bg-transparent text-muted-foreground hover:text-foreground hover:bg-muted'
               }`}
               data-testid="toggle-before"
             >
@@ -96,7 +96,7 @@ export const BeforeAfterGallery = () => {
               className={`px-6 py-3 font-medium text-sm tracking-wide transition-all duration-300 ${
                 showAfter 
                   ? 'bg-brand-gold text-brand-dark' 
-                  : 'bg-transparent text-brand-cream/60 hover:text-brand-cream hover:bg-white/5'
+                  : 'bg-transparent text-muted-foreground hover:text-foreground hover:bg-muted'
               }`}
               data-testid="toggle-after"
             >
@@ -118,7 +118,7 @@ export const BeforeAfterGallery = () => {
             className={`h-1 transition-all duration-300 ${
               index === currentIndex 
                 ? 'bg-brand-maroon w-10' 
-                : 'bg-white/20 w-6 hover:bg-white/40'
+                : 'bg-muted-foreground/30 w-6 hover:bg-muted-foreground/50'
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />

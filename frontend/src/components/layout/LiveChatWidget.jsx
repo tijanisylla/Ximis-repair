@@ -10,13 +10,13 @@ export const LiveChatWidget = () => {
     <div className="fixed bottom-6 left-6 z-50 hidden lg:block" data-testid="live-chat-widget">
       {/* Chat Window */}
       <div 
-        className={`absolute bottom-16 left-0 w-80 bg-brand-charcoal border border-white/10 shadow-premium transition-all duration-300 origin-bottom-left ${
+        className={`absolute bottom-16 left-0 w-80 bg-card border border-border shadow-premium transition-all duration-300 origin-bottom-left ${
           isOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'
         }`}
         data-testid="chat-window"
       >
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-white/10 bg-brand-maroon">
+        <div className="flex items-center justify-between p-4 border-b border-border bg-brand-maroon">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-white/10 flex items-center justify-center">
               <MessageCircle className="w-5 h-5 text-white" />
@@ -37,12 +37,12 @@ export const LiveChatWidget = () => {
 
         {/* Body */}
         <div className="p-5 space-y-4">
-          <div className="bg-brand-dark/50 p-4 border-l-2 border-brand-maroon">
-            <p className="text-brand-cream/80 text-sm leading-relaxed">
+          <div className="bg-muted/50 p-4 border-l-2 border-brand-maroon">
+            <p className="text-foreground/80 text-sm leading-relaxed">
               Hi! Thanks for reaching out. For the fastest response, give us a call - we're available 24/7.
             </p>
           </div>
-          <p className="text-brand-cream/50 text-xs">
+          <p className="text-muted-foreground text-xs">
             Our team is ready to assist with any auto repair or car wash questions.
           </p>
           <a href={BUSINESS.phoneLink} className="block">
@@ -54,17 +54,17 @@ export const LiveChatWidget = () => {
         </div>
 
         {/* Footer */}
-        <div className="p-4 border-t border-white/5 bg-brand-dark/50">
-          <div className="flex items-center gap-2 bg-brand-dark border border-white/10 px-3 py-2">
+        <div className="p-4 border-t border-border bg-muted/30">
+          <div className="flex items-center gap-2 bg-muted border border-border px-3 py-2">
             <input 
               type="text" 
               placeholder="Type a message..." 
-              className="flex-1 bg-transparent text-sm text-brand-cream placeholder:text-brand-cream/30 outline-none"
+              className="flex-1 bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none"
               disabled
             />
-            <Send className="w-4 h-4 text-brand-cream/30" />
+            <Send className="w-4 h-4 text-muted-foreground" />
           </div>
-          <p className="text-center text-[10px] text-brand-cream/30 mt-2">
+          <p className="text-center text-[10px] text-muted-foreground mt-2">
             Live chat coming soon
           </p>
         </div>
@@ -75,7 +75,7 @@ export const LiveChatWidget = () => {
         onClick={() => setIsOpen(!isOpen)}
         className={`w-14 h-14 flex items-center justify-center transition-all duration-300 ${
           isOpen 
-            ? 'bg-brand-charcoal text-brand-cream border border-white/10' 
+            ? 'bg-card text-foreground border border-border' 
             : 'bg-brand-maroon text-white shadow-maroon hover:bg-brand-maroon-light'
         }`}
         aria-label="Toggle chat"
